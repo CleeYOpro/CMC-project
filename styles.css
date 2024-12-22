@@ -1,0 +1,114 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: #002855;
+    padding: 0 32px;
+  }
+  
+  .navbar-logo img {
+    margin-right: 225px;
+    margin-top: 13px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin-right: 32px;
+    position: relative;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600; /* Semi-bold */
+    font-size: 16px;
+    padding: 10px 0; /* Add padding to align other headers with Resources */
+  }
+  
+  .nav-item a:hover {
+    border-bottom: 2px solid white;
+    transition: border-bottom 0.3s;
+  }
+  
+  /* Styles specifically for the Resources dropdown header */
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    padding: 10px 0; /* Adjust padding for alignment */
+    cursor: pointer;
+  }
+  
+  .dropdown-toggle:hover {
+    border-bottom: none; /* Remove underline effect for Resources */
+  }
+  
+  .dropdown-icon {
+    margin-left: 4px;
+  }
+  
+  /* Dropdown Menu Styling */
+  .dropdown-menu {
+    white-space: nowrap;
+    display: none; /* Hide by default */
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #002855;
+    list-style: none;
+    padding: 6px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Curved edges for dropdown */
+  }
+  
+  .dropdown-menu li {
+    margin: 0;
+  }
+  
+  /* Styling individual dropdown items */
+  .dropdown-menu li a {
+    display: block;
+    padding: 4px 16px;
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+  }
+  
+  .dropdown-menu li a:hover {
+    color: #ffffff;
+  }
+  
+  /* Underline animation for dropdown items */
+  .dropdown-menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s;
+  }
+  
+  .dropdown-menu li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Show dropdown only when hovering over Resources */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
