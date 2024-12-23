@@ -35,7 +35,7 @@ body {
     color: white;
     font-weight: 600; /* Semi-bold */
     font-size: 16px;
-    padding: 10px 0; /* Add padding to align other headers with Resources */
+    padding: 4px 0;
   }
   
   .nav-item a:hover {
@@ -43,26 +43,25 @@ body {
     transition: border-bottom 0.3s;
   }
   
-  /* Styles specifically for the Resources dropdown header */
+  /* Remove underline effect for "Resources" */
   .dropdown-toggle {
     display: flex;
     align-items: center;
-    padding: 10px 0; /* Adjust padding for alignment */
-    cursor: pointer;
+    text-decoration: none;
   }
   
   .dropdown-toggle:hover {
-    border-bottom: none; /* Remove underline effect for Resources */
+    border-bottom: none; /* No underline on hover */
   }
   
   .dropdown-icon {
     margin-left: 4px;
   }
   
-  /* Dropdown Menu Styling */
+  /* Dropdown Menu Styles */
   .dropdown-menu {
+    display: none; 
     white-space: nowrap;
-    display: none; /* Hide by default */
     text-align: left;
     position: absolute;
     top: 100%;
@@ -70,6 +69,7 @@ body {
     background-color: #002855;
     list-style: none;
     padding: 6px 0;
+    width: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px; /* Curved edges for dropdown */
   }
@@ -78,7 +78,6 @@ body {
     margin: 0;
   }
   
-  /* Styling individual dropdown items */
   .dropdown-menu li a {
     display: block;
     padding: 4px 16px;
@@ -107,8 +106,16 @@ body {
     width: 100%;
   }
   
-  /* Show dropdown only when hovering over Resources */
+  /* Show dropdown on hover */
   .nav-item.dropdown:hover .dropdown-menu {
     display: block;
+  }
+  
+  /* Adjust alignment for all nav items */
+  .nav-item a,
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Aligns text with "Resources" */
   }
   
