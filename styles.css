@@ -39,8 +39,8 @@ body {
   }
   
   .nav-item a:hover {
-    border-bottom: 2px solid white;
-    transition: border-bottom 0.3s;
+    text-decoration: underline;
+    transition: text-decoration 0.3s;
   }
   
   /* Remove underline effect for "Resources" */
@@ -48,10 +48,6 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-  }
-  
-  .dropdown-toggle:hover {
-    border-bottom: none; /* No underline on hover */
   }
   
   .dropdown-icon {
@@ -86,9 +82,6 @@ body {
     position: relative;
   }
   
-  .dropdown-menu li a:hover {
-    color: #ffffff;
-  }
   
   /* Underline animation for dropdown items */
   .dropdown-menu li a::after {
@@ -98,8 +91,8 @@ body {
     bottom: 0;
     width: 0;
     height: 2px;
-    background-color: white;
-    transition: width 0.3s;
+    text-decoration: underline;
+    transition: text-decoration 0.3s;
   }
   
   .dropdown-menu li a:hover::after {

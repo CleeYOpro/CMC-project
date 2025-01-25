@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+    <style>
+        footer {
+            background-color: #002855;
+            color: #ffffff;
+            padding: 80px 45px;
+            font-family: 'Montserrat';
+            font-weight: 600;
+
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .footer-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .footer-items h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-items p,
+        .footer-items a {
+            font-size: 14px;
+            color: #ffffff;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-items a:hover {
+            text-decoration: underline;
+        }
+
+        .quick-links,
+        .social-media,
+        .Contact {
+            margin-bottom: 20px;
+        }
+
+        .social-media a {
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .Contact a {
+            display: block;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .contact-item i {
+            font-size: 18px;
+            margin-right: 10px;
+            color: #ffffff;
+        }
+
+        .footer-logo img {
+            width: 700px;
+            height: 140px;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .footer-copy {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-copy a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer-copy a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .footer-logo img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="container">
+            <div class="footer-items">
+                <div class="quick-links">
+                    <h3>Quick Links</h3>
+                    <p><a href="#Faculty">Faculty</a></p>
+                    <p><a href="#Services">Services</a></p>
+                    <p><a href="#Educational Resources">Educational Resources</a></p>
+                    <p><a href="#Donate">Donate</a></p>
+                </div>
+                <div class="social-media">
+                    <h3>Connect With Us</h3>
+                    <p><a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a></p>
+                </div>
+                <div class="Contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:palcare@cmcvellore.ac.in">palcare@cmcvellore.ac.in</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <p id="number">+91 0416-228-3159</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p id="locate">Outpatient Clinic Locations</p>
+                    </div>
+                    <p>CMC Vellore, Main Campus OPD Block 1st floor, Near PCF</p>
+                    <p>CMC Vellore, Ranipet Campus A Block, Basement A0002</p>
+                    <p>CMC Vellore, Chittoor Campus Room No:15, North OPD Palliative Medicine.</p>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <img src="Images/Full_logo.png" alt="Department Logo">
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2024 Department of Palliative Medicine - Christian Medical College, Vellore. All Rights Reserved.</p>
+                <p>Designed by <a href="https://linkedin.com/in/cleofus-balaranjith-3aa454310" target="_blank">Cleo Balaranjith</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
