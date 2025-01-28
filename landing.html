@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+        <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
+        <style>
+            #navbar {
+                margin-bottom: 60px; /* Add some space below the navbar */
+            }
+            /*
+            .slider1 {
+                position: relative;
+                text-align: center;
+                color: white;
+            }
+            .slider1 h1{
+                font-family: 'Domine', serif;
+                font-size: 160px;
+            }*/
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 80px auto;
+                width: 80%;
+                max-width: 1200px;
+            }
+            .text-box {
+                width: 549px;
+                height: 624px;
+                background-color: #ffffff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 60px;
+                font-family: 'Domine', serif;
+                font-weight: bold;
+                text-align: left;
+                margin-right: 40px;
+            }
+            .image-box {
+                width: 683px;
+                height: 658px;
+                background-color: #ffffff;
+                display: flex;
+                align-items: top;
+                justify-content: top;
+            }
+            .arrow {
+                width: 80px;
+                height: 80px;
+                background-color: #ccc;
+                margin: 48px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="navbar"></div>
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        </script>
+        <div class="container">
+            <div class="text-box">
+                Edema care given to an inpatient by a palliative care nurse.
+                <i class="fa-solid fa-square-caret-right"></i>
+                <i class="fa-solid fa-square-caret-left"></i>
+            </div>
+            <div class="image-box">
+                <img src="Images\image 4.png" alt="Image" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </body>
+</html>
