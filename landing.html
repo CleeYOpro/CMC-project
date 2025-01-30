@@ -19,29 +19,41 @@
                 font-size: 160px;
             }*/
             body {
-                margin: 0;
                 font-family: Arial, sans-serif;
             }
             .container {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
                 margin: 80px auto;
                 width: 80%;
-                max-width: 1200px;
+                max-width: 1352;
             }
-            .text-box {
+            .text-container {
                 width: 549px;
-                height: 624px;
+                height: 659px;
                 background-color: #ffffff;
-                display: flex;
+                display: inline;
                 align-items: center;
                 justify-content: center;
+                font-size: 90px;
+
+            }
+            .text-container i{
+                padding-right: 22px;
+            }
+            .text-container i:hover {
+                opacity: 50%;
+            }
+            .textbox {
+                width: 549px;
+                height: 324px;
+                background-color: #ffffff;
                 font-size: 60px;
                 font-family: 'Domine', serif;
                 font-weight: bold;
                 text-align: left;
-                margin-right: 40px;
+                align-content: center;
+                line-height: 135%;
+                
             }
             .image-box {
                 width: 683px;
@@ -50,6 +62,7 @@
                 display: flex;
                 align-items: top;
                 justify-content: top;
+                margin-left: 118px;
             }
             .arrow {
                 width: 80px;
@@ -69,10 +82,10 @@
                 });
         </script>
         <div class="container">
-            <div class="text-box">
-                Edema care given to an inpatient by a palliative care nurse.
-                <i class="fa-solid fa-square-caret-right"></i>
-                <i class="fa-solid fa-square-caret-left"></i>
+            <div class="text-container">
+                <div class="textbox">Edema care given to an inpatient by a palliative care nurse.</div>
+                <i class="fa-solid fa-square-caret-left" style="color: 6089B7;"></i>
+                <i class="fa-solid fa-square-caret-right"style="color: 6089B7;"></i>
             </div>
             <div class="image-box">
                 <img src="Images\image 4.png" alt="Image" style="max-width: 100%; height: auto;">
