@@ -1,14 +1,17 @@
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
-        <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
-        <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
-        <style>
-            #navbar {
-                margin-bottom: 60px; /* Add some space below the navbar */
-            }
-            /*
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
+    <style>
+        #navbar {
+            margin-bottom: 60px;
+            /* Add some space below the navbar */
+        }
+
+        /*
             .slider1 {
                 position: relative;
                 text-align: center;
@@ -17,79 +20,164 @@
             .slider1 h1{
                 font-family: 'Domine', serif;
                 font-size: 160px;
-            }*/
-            body {
-                font-family: Arial, sans-serif;
             }
-            .container {
-                display: flex;
-                margin: 80px auto;
-                width: 80%;
-                max-width: 1352;
-            }
-            .text-container {
-                width: 549px;
-                height: 659px;
-                background-color: #ffffff;
-                display: inline;
-                align-items: center;
-                justify-content: center;
-                font-size: 90px;
+        body {
+            font-family: Arial, sans-serif;
+        }*/
 
-            }
-            .text-container i{
-                padding-right: 22px;
-            }
-            .text-container i:hover {
-                opacity: 50%;
-            }
-            .textbox {
-                width: 549px;
-                height: 324px;
-                background-color: #ffffff;
-                font-size: 60px;
-                font-family: 'Domine', serif;
-                font-weight: bold;
-                text-align: left;
-                align-content: center;
-                line-height: 135%;
-                
-            }
-            .image-box {
-                width: 683px;
-                height: 658px;
-                background-color: #ffffff;
-                display: flex;
-                align-items: top;
-                justify-content: top;
-                margin-left: 118px;
-            }
-            .arrow {
-                width: 80px;
-                height: 80px;
-                background-color: #ccc;
-                margin: 48px auto;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="navbar"></div>
-        <script>
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                });
-        </script>
-        <div class="container">
-            <div class="text-container">
-                <div class="textbox">Edema care given to an inpatient by a palliative care nurse.</div>
-                <i class="fa-solid fa-square-caret-left" style="color: 6089B7;"></i>
-                <i class="fa-solid fa-square-caret-right"style="color: 6089B7;"></i>
-            </div>
-            <div class="image-box">
-                <img src="Images\image 4.png" alt="Image" style="max-width: 100%; height: auto;">
-            </div>
+        .container1 {
+            display: flex;
+            margin: 80px auto;
+            width: 80%;
+            max-width: 1352;
+        }
+
+        .text-container {
+            width: 549px;
+            height: 659px;
+            background-color: #ffffff;
+            display: inline;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+
+        }
+
+        .text-container i {
+            padding-right: 22px;
+        }
+
+        .text-container i:hover {
+            opacity: 50%;
+        }
+
+        .textbox {
+            width: 549px;
+            height: 324px;
+            background-color: #ffffff;
+            font-size: 60px;
+            font-family: 'Domine', serif;
+            font-weight: bold;
+            text-align: left;
+            align-content: center;
+            line-height: 135%;
+
+        }
+
+        .image-box {
+            width: 683px;
+            height: 658px;
+            background-color: #ffffff;
+            display: flex;
+            align-items: top;
+            justify-content: top;
+            margin-left: 118px;
+        }
+
+        .arrow {
+            width: 80px;
+            height: 80px;
+            background-color: #ccc;
+            margin: 48px auto;
+        }
+
+        /* Who We Are Section Styles */
+        .who-we-are-section {
+            background-color: #002855;
+            height: 173px;
+            margin-top: 60px;
+            padding: 40px 0;
+            color: white;
+        }
+
+        .who-we-are-wrapper {
+            max-width: 1352px;
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .who-we-are-content {
+            max-width: 905px;
+        }
+
+        .who-we-are-heading {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            margin: 0 0 4px 0;
+            font-weight: 700;
+
+        }
+
+        .who-we-are-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            line-height: 135%;
+            margin: 0;
+            font-weight: 500;
+
+        }
+
+        .who-we-are-btn {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: white;
+            background-color: transparent;
+            border: 4px solid white;
+            padding: 14px 46px;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            align-self: center;
+            transition: all 0.3s ease;
+        }
+
+        .who-we-are-btn:hover {
+            background-color: white;
+            color: #002855;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+    </script>
+    <div class="container1">
+        <div class="text-container">
+            <div class="textbox">Edema care given to an inpatient by a palliative care nurse.</div>
+            <i class="fa-solid fa-square-caret-left" style="color: 6089B7;"></i>
+            <i class="fa-solid fa-square-caret-right" style="color: 6089B7;"></i>
         </div>
-    </body>
+        <div class="image-box">
+            <img src="Images\image 4.png" alt="Image" style="max-width: 100%; height: auto;">
+        </div>
+    </div>
+    <div class="container2">
+
+    </div>
+
+    <div class="who-we-are-section">
+        <div class="who-we-are-wrapper">
+            <div class="who-we-are-content">
+                <h2 class="who-we-are-heading">Who We Are</h2>
+                <p class="who-we-are-text">The Department of Palliative Medicine at Christian Medical College Vellore is
+                    dedicated to offering compassionate, whole-person care for patients with advanced cancers and
+                    chronic conditions like COPD, ILD, and renal failure. Our caring team of doctors, nurses,
+                    psychologists, social workers, and chaplains works closely with patients and their families to
+                    provide comfort, support, and hope through every step of their journey.</p>
+            </div>
+            <a href="#" class="who-we-are-btn">Read More</a>
+        </div>
+    </div>
+</body>
+
 </html>
