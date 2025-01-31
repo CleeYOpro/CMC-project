@@ -36,19 +36,9 @@
             width: 549px;
             height: 659px;
             background-color: #ffffff;
-            display: inline;
-            align-items: center;
-            justify-content: center;
-            font-size: 90px;
-
-        }
-
-        .text-container i {
-            padding-right: 22px;
-        }
-
-        .text-container i:hover {
-            opacity: 50%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
         .textbox {
@@ -59,26 +49,61 @@
             font-family: 'Domine', serif;
             font-weight: bold;
             text-align: left;
-            align-content: center;
             line-height: 135%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
 
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .controls {
+            margin-top: auto;
+        }
+
+        .text-container i {
+            padding-right: 22px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 160px;
+        }
+
+        .text-container i:hover {
+            opacity: 50%;
         }
 
         .image-box {
             width: 683px;
             height: 658px;
             background-color: #ffffff;
-            display: flex;
-            align-items: top;
-            justify-content: top;
             margin-left: 118px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .arrow {
-            width: 80px;
-            height: 80px;
-            background-color: #ccc;
-            margin: 48px auto;
+        .image-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            object-fit: cover;
+        }
+
+        .image-box img.active {
+            opacity: 1;
         }
 
         /* Who We Are Section Styles */
@@ -153,12 +178,18 @@
     </script>
     <div class="container1">
         <div class="text-container">
-            <div class="textbox">Edema care given to an inpatient by a palliative care nurse.</div>
-            <i class="fa-solid fa-square-caret-left" style="color: 6089B7;"></i>
-            <i class="fa-solid fa-square-caret-right" style="color: 6089B7;"></i>
+            <div class="textbox">
+                <div class="slide active">Edema care given to an inpatient by a palliative care nurse.</div>
+                <div class="slide">Palliative care nurse dresses a wound during a home visit.</div>
+            </div>
+            <div class="controls">
+                <i class="fa-solid fa-square-caret-left" style="color: #6089B7;" onclick="changeSlide(-1)"></i>
+                <i class="fa-solid fa-square-caret-right" style="color: #6089B7;" onclick="changeSlide(1)"></i>
+            </div>
         </div>
         <div class="image-box">
-            <img src="Images\image 4.png" alt="Image" style="max-width: 100%; height: auto;">
+            <img src="Images/image 4.png" alt="Edema care" class="active">
+            <img src="Images/wounddressin.png" alt="Wound dressing">
         </div>
     </div>
     <div class="container2">
@@ -178,6 +209,30 @@
             <a href="#" class="who-we-are-btn">Read More</a>
         </div>
     </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const images = document.querySelectorAll('.image-box img');
+
+        function showSlide(index) {
+            // Remove active class from all slides and images
+            slides.forEach(slide => slide.classList.remove('active'));
+            images.forEach(image => image.classList.remove('active'));
+
+            // Add active class to current slide and image
+            slides[index].classList.add('active');
+            images[index].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            currentSlide = currentSlide === 0 ? 1 : 0;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the first slide
+        showSlide(0);
+    </script>
 </body>
 
 </html>
