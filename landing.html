@@ -79,7 +79,7 @@
         }
 
         .text-container i:hover {
-            opacity: 50%;
+            color: #324a65 !important;
         }
 
         .image-box {
@@ -164,6 +164,111 @@
             background-color: white;
             color: #002855;
         }
+
+        /* What We Do Section */
+        .what-we-do-section {
+            max-width: 1352px;
+            height: 701px;
+            margin: 80px auto 0;
+            padding: 0 32px;
+        }
+
+        .what-we-do-heading {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            color: #002855;
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .service-cards-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 56px;
+        }
+
+        .service-card {
+            width: 319px;
+            height: 452px;
+            border: 3px solid #002855;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card img {
+            width: 325px;
+            height: 288px;
+            object-fit: cover;
+        }
+
+        .service-card h3 {
+            font-family: 'Domine', serif;
+            font-size: 19px;
+            color: #002855;
+            font-weight: bold;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+
+
+        .service-card p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333333;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+
+
+        .read-more-button {
+            width: 390px;
+            height: 56px;
+            background-color: #6089B7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more-button:hover {
+            background-color: #324a65;
+        }
+
+        .schedule {
+            margin-top: 80px;
+        }
+
+        .schedule-heading {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            color: #002855;
+            text-align: center;
+            margin-bottom: -50px;
+        }
+
+        .schedule-heading2 {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            color: #002855;
+            text-align: center;
+
+        }
+
+        .shedule-table {
+            margin-top: 130px;
+
+        }
     </style>
 </head>
 
@@ -208,6 +313,53 @@
             </div>
             <a href="#" class="who-we-are-btn">Read More</a>
         </div>
+    </div>
+
+    <div class="what-we-do-section">
+        <h2 class="what-we-do-heading">What We Do</h2>
+        <div class="service-cards-container">
+            <div class="service-card">
+                <img src="Images\whwe1.png" alt="Outpatient and Inpatient Care">
+                <div class="service-card-content">
+                    <h3>Outpatient and Inpatient Care:</h3>
+                    <p>We provide personalized care to improve quality of life through regular outpatient follow-ups and
+                        symptom management in our inpatient unit.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="Images\whawe2.png" alt="Home Care and Hospice Services">
+                <div class="service-card-content">
+                    <h3>Hospice Services:</h3>
+                    <p>Our team offers home visits and compassionate end-of-life care at our 15-bed hospice, ensuring
+                        comfort when hospital or home care isn't possible.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="Images\whawe3.png" alt="Counseling and Support">
+                <div class="service-card-content">
+                    <h3>Counseling and Support:</h3>
+                    <p>We offer emotional, social, and spiritual support for patients and families through counseling,
+                        social care, and spiritual guidance.</p>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <img src="Images\whawe4.png" alt="Consultation and Bereavement">
+                <div class="service-card-content">
+                    <h3>Consultation and Bereavement:</h3>
+                    <p>Our team provides consultative care in various wards and ongoing bereavement support for families
+                        after the loss of a loved one.</p>
+                </div>
+            </div>
+        </div>
+        <button class="read-more-button">Read More</button>
+    </div>
+    <div class="schedule">
+        <h2 class="schedule-heading">Come Visit Us:</h2>
+        <h2 class="schedule-heading2">Our Schedule for Outpatient Care</h2>
+        <img id="schedule-table" src="Images\come_visit.png" alt="ef">
     </div>
 
     <script>
