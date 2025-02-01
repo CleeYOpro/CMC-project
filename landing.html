@@ -247,6 +247,7 @@
 
         .schedule {
             margin-top: 80px;
+            margin-bottom: 80px;
         }
 
         .schedule-heading {
@@ -263,11 +264,17 @@
             color: #002855;
             text-align: center;
 
+
         }
 
-        .shedule-table {
-            margin-top: 130px;
-
+        .schedule-table {
+            margin-top: 56px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 80px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 0 16px 16px 16px;
         }
     </style>
 </head>
@@ -359,9 +366,16 @@
     <div class="schedule">
         <h2 class="schedule-heading">Come Visit Us:</h2>
         <h2 class="schedule-heading2">Our Schedule for Outpatient Care</h2>
-        <img id="schedule-table" src="Images\come_visit.png" alt="ef">
+        <img src="Images\come_visit.png" alt="ef" class="schedule-table">
     </div>
-
+    <div id="footernew"></div>
+    <script>
+        fetch('footernew.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footernew').innerHTML = data;
+            });
+    </script>
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
