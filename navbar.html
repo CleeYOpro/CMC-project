@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,10 @@
 
     .navbar-container {
       display: flex;
-      justify-content: center; /* Center the navbar horizontally */
-      background-color: #002855; /* Match the navbar background color */
+      justify-content: center;
+      /* Center the navbar horizontally */
+      background-color: #002855;
+      /* Match the navbar background color */
     }
 
     .navbar {
@@ -25,7 +28,7 @@
       background-color: #002855;
       padding: 0 32px;
       max-width: 1352px;
-      width: 100%; 
+      width: 100%;
     }
 
     .navbar-logo img {
@@ -50,7 +53,8 @@
     .nav-item a {
       text-decoration: none;
       color: white;
-      font-weight: 600; /* Semi-bold */
+      font-weight: 600;
+      /* Semi-bold */
       font-size: 16px;
       padding: 4px 0;
     }
@@ -74,50 +78,35 @@
     /* Dropdown Menu Styles */
     .dropdown-menu {
       display: none;
-      white-space: nowrap;
-      text-align: left;
       position: absolute;
       top: 100%;
       left: 0;
       background-color: #002855;
-      list-style: none;
-      padding: 6px 0;
-      width: auto;
+      min-width: 200px;
+      padding: 8px 0;
+      border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px; /* Curved edges for dropdown */
+      z-index: 1000;
     }
 
     .dropdown-menu li {
-      margin: 0;
-    }
-
-    .dropdown-menu li a {
       display: block;
-      padding: 4px 16px;
-      text-decoration: none;
-      color: #ffffff;
-      position: relative;
-    }
-
-    /* Underline animation for dropdown items */
-    .dropdown-menu li a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      text-decoration: underline;
-      transition: text-decoration 0.3s;
-    }
-
-    .dropdown-menu li a:hover::after {
       width: 100%;
     }
 
-    /* Show dropdown on hover */
+    .dropdown-menu li a {
+      padding: 8px 16px;
+      display: block;
+      white-space: nowrap;
+    }
+
     .nav-item.dropdown:hover .dropdown-menu {
       display: block;
+    }
+
+    .dropdown-icon {
+      font-size: 12px;
+      margin-left: 4px;
     }
 
     /* Adjust alignment for all nav items */
@@ -125,27 +114,24 @@
     .dropdown-toggle {
       display: flex;
       align-items: center;
-      height: 100%; /* Aligns text with "Resources" */
+      height: 100%;
+      /* Aligns text with "Resources" */
     }
   </style>
 </head>
+
 <body>
   <div class="navbar-container">
     <nav class="navbar">
       <div class="navbar-logo">
-        <img
-          src="Images/Full_logo.png"
-          alt="Department Logo"
-          width="360"
-          height="72"
-        />
+        <img src="Images/Full_logo.png" alt="Department Logo" width="360" height="72" />
       </div>
       <ul class="navbar-links">
         <li class="nav-item">
-          <a href="#home">Home</a>
+          <a href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a href="#about">About</a>
+          <a href="aboutus.html">About</a>
         </li>
         <li class="nav-item">
           <a href="#faculty">Faculty</a>
@@ -160,12 +146,12 @@
           <a href="#contact">Contact</a>
         </li>
         <li class="nav-item dropdown">
-          <a href="#resources" class="dropdown-toggle">
-            Resources <span class="dropdown-icon"></span>
+          <a href="#" class="dropdown-toggle">
+            Resources <span class="dropdown-icon">▼</span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#patient-stories">Patient Stories</a></li>
-            <li><a href="#educational-videos">Educational Videos</a></li>
+            <li><a href="patient-stories.html">Patient Stories</a></li>
+            <li><a href="educational-videos.html">Educational Videos</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -175,4 +161,5 @@
     </nav>
   </div>
 </body>
+
 </html>

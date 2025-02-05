@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>About Us - Department of Palliative Medicine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 507px;
+            overflow: hidden;
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 49, 75, 0.3);
+            /* Semi-transparent overlay */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-family: 'Domine', serif;
+            font-size: 72px;
+            color: white;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 64px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-section {
+                height: 400px;
+            }
+        }
+
+        .compassionate-care {
+            max-width: 1352px;
+            margin: 80px auto;
+            padding: 0 80px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .care-image {
+            flex: 1;
+            min-height: 614px;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 685px;
+        }
+
+        .care-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .care-content {
+            flex: 1;
+            max-width: 630px;
+        }
+
+        .care-title {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            color: #002855;
+            margin: 0 0 55px 0;
+            line-height: 120%;
+        }
+
+        .care-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            line-height: 135%;
+            color: #002855;
+            background-color: #002855;
+            color: white;
+            padding: 24px;
+            border-radius: 8px;
+            text-align: justify;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .compassionate-care {
+                padding: 0 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .compassionate-care {
+                flex-direction: column;
+                padding: 0 32px;
+            }
+
+            .care-image,
+            .care-content {
+                max-width: 100%;
+            }
+
+            .care-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .compassionate-care {
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+
+            .care-title {
+                font-size: 32px;
+            }
+
+            .care-text {
+                padding: 24px;
+                font-size: 14px;
+            }
+        }
+
+        .dual-container {
+            max-width: 1352px;
+            margin: 80px auto;
+            padding: 0 80px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .info-box {
+            flex: 1;
+            width: 666px;
+            min-height: 398px;
+            border-radius: 16px;
+            overflow: auto;
+            background-color: #002855;
+            color: white;
+            padding: 24px;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            line-height: 135%;
+            text-align: justify;
+            height: auto;
+        }
+
+        .image-container {
+            flex: 1;
+            width: 666px;
+            height: 398px;
+            border-radius: 16px;
+            overflow: hidden;
+            align-self: flex-start;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Add responsive styles */
+        @media (max-width: 1200px) {
+            .dual-container {
+                padding: 0 40px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .dual-container {
+                flex-direction: column;
+                padding: 0 32px;
+            }
+
+            .info-box,
+            .image-container {
+                width: 100%;
+            }
+
+            .info-box {
+                height: auto;
+                min-height: unset;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dual-container {
+                margin: 32px auto;
+                padding: 0 20px;
+            }
+
+            .info-box {
+                font-size: 16px;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div class="hero-section">
+        <img src="Images/Group 8.png" alt="About Us Background">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">About Us</h1>
+        </div>
+    </div>
+
+    <div class="compassionate-care">
+        <div class="care-image">
+            <img src="Images/Nurse-teach-nasogastric-feeds-1024x768 1.png" alt="Nurse teaching nasogastric feeds">
+        </div>
+        <div class="care-content">
+            <h2 class="care-title">Compassionate care, tailored support</h2>
+            <div class="care-text">
+                The Department of Palliative Medicine at Christian Medical College, Vellore, was established in response
+                to the pressing need for comprehensive and holistic care for patients with advanced cancer. In India,
+                approximately seventy percent of cancer patients are diagnosed at advanced or incurable stages, where
+                the focus shifts from curative treatment to symptom management and quality of life. These patients often
+                experience challenging physical symptoms, particularly toward the end of life. Alongside the physical
+                toll, patients and their families grapple with financial burdens, caregiver stress, social stigma, and
+                spiritual distress, making the need for palliative care crucial.
+            </div>
+        </div>
+    </div>
+
+    <div class="dual-container">
+        <div class="info-box">
+            Over time, the department has extended its services beyond cancer care to address suffering in other chronic
+            progressive illnesses, such as chronic obstructive pulmonary disease (COPD), interstitial lung disease
+            (ILD), renal failure, and more. The department is dedicated to providing whole-person care, acknowledging
+            that effective palliative care encompasses more than just physical relief. By integrating physical,
+            emotional, social, and spiritual support, the department aims to improve the quality of life for both
+            patients and their families. The Palliative Medicine Department is staffed by an interdisciplinary team,
+            including doctors, nurses, psychologists, social workers, and chaplains, all working together to deliver
+            personalized care.
+        </div>
+        <div class="image-container">
+            <img src="Images/image 13.png" alt="Palliative care team providing support">
+        </div>
+    </div>
+
+    <div id="footernew"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        fetch('footernew.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footernew').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>
