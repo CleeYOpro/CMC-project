@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Training - Department of Palliative Medicine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 507px;
+            overflow: hidden;
+        }
+
+        .hero-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(17, 41, 68, 0.3);
+            /* Semi-transparent overlay */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-family: 'Domine', serif;
+            font-size: 72px;
+            color: white;
+            margin: 0;
+            padding: 0 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 64px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .hero-section {
+                height: 400px;
+            }
+        }
+
+        /* Training Section Styles */
+        .training-container {
+            max-width: 1352px;
+            margin: 80px auto;
+            padding: 0 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .training-item {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .training-text {
+            flex: 1;
+            background-color: #002855;
+            color: white;
+            padding: 16px;
+            border-radius: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            line-height: 135%;
+            display: flex;
+            align-items: center;
+            min-height: 185px;
+            text-align: justify;
+        }
+
+        .training-image {
+            flex: 0 0 432px;
+            height: 215px;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .training-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .training-container {
+                padding: 0 32px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .training-item {
+                flex-direction: column;
+            }
+
+            .training-image {
+                flex: 0 0 auto;
+                width: 100%;
+                height: auto;
+                aspect-ratio: 432/215;
+            }
+
+            .training-text {
+                width: 100%;
+                min-height: unset;
+                text-align: justify;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .training-container {
+                padding: 0 20px;
+                margin: 40px auto;
+            }
+
+            .training-text {
+                font-size: 16px;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div class="hero-section">
+        <img src="Images\A-Guide-to-Developing-Effective.png" alt="About Us Background">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Training</h1>
+        </div>
+    </div>
+
+    <div class="training-container">
+        <div class="training-item">
+            <div class="training-text">
+                The Department of Palliative Medicine offers postgraduate training, including a DNB Program in
+                Palliative Medicine with two seats per year, starting in 2024. The department also runs a one-year
+                full-time residential Certificate Course in Palliative Medicine, covering principles of palliative care,
+                symptom management, ethics, and communication skills. Training includes outpatient, inpatient, and home
+                care settings, along with peripheral postings in related departments.
+            </div>
+            <div class="training-image">
+                <img src="Images/PALLIATIVE.png" alt="Palliative Care Training">
+            </div>
+        </div>
+
+        <div class="training-item">
+            <div class="training-text">
+                In addition to postgraduate education, the department teaches undergraduate students the essentials of
+                palliative care. Postgraduate trainees and fellowship students from specialties like Radiotherapy,
+                Geriatric Medicine, Pulmonary Medicine, and Gynae Oncology also undergo palliative care training. MSc
+                nursing students and Fellowship in Oncology nursing students receive specialized palliative care nursing
+                training, while allied health students in medical sociology and hospital administration spend time in
+                the department.
+            </div>
+            <div class="training-image">
+                <img src="Images/SECONDLAST.png" alt="Medical Training">
+            </div>
+        </div>
+
+        <div class="training-item">
+            <div class="training-text">
+                Doctors and nurses from mission hospitals visit to enhance their skills in providing cost-effective
+                palliative care, particularly in low-resource rural hospitals. The department emphasizes hands-on
+                learning and interdisciplinary collaboration to improve palliative care services across different
+                healthcare settings.
+            </div>
+            <div class="training-image">
+                <img src="Images/LAST.png" alt="Hospital Training">
+            </div>
+        </div>
+    </div>
+
+    <div id="footernew"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            });
+
+        fetch('footernew.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footernew').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

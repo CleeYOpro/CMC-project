@@ -117,6 +117,137 @@
       height: 100%;
       /* Aligns text with "Resources" */
     }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 10px;
+      margin-left: auto;
+    }
+
+    .hamburger-icon {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .hamburger-icon::before,
+    .hamburger-icon::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      transition: all 0.3s;
+    }
+
+    .hamburger-icon::before {
+      transform: translateY(-10px);
+    }
+
+    .hamburger-icon::after {
+      transform: translateY(10px);
+    }
+
+    .hamburger.active .hamburger-icon {
+      background: transparent;
+    }
+
+    .hamburger.active .hamburger-icon::before {
+      transform: rotate(45deg);
+    }
+
+    .hamburger.active .hamburger-icon::after {
+      transform: rotate(-45deg);
+    }
+
+    /* Hide mobile-only items by default */
+    .nav-item.mobile-only {
+      display: none;
+    }
+
+    /* Mobile Menu Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+
+      .navbar-logo img {
+        margin-right: 0;
+        height: 60px;
+        width: auto;
+        position: relative;
+        z-index: 1002;
+      }
+
+      .hamburger {
+        display: block;
+        z-index: 1001;
+      }
+
+      .navbar-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #002855;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 100px 40px 40px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+      }
+
+      .navbar-links.active {
+        transform: translateY(0);
+      }
+
+      .nav-item {
+        width: 100%;
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .nav-item a {
+        font-size: 20px;
+        padding: 12px 0;
+        justify-content: flex-start;
+      }
+
+      /* Hide dropdown in mobile menu */
+      .nav-item.dropdown {
+        display: none;
+      }
+
+      /* Show mobile-only items in hamburger menu */
+      .nav-item.mobile-only {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .nav-item.mobile-only a {
+        font-size: 20px;
+        padding: 12px 0;
+        justify-content: flex-start;
+      }
+
+      /* Prevent scrolling when menu is open */
+      body.menu-open {
+        overflow: hidden;
+      }
+    }
   </style>
 </head>
 
@@ -126,6 +257,9 @@
       <div class="navbar-logo">
         <img src="Images/Full_logo.png" alt="Department Logo" width="360" height="72" />
       </div>
+      <button class="hamburger">
+        <span class="hamburger-icon"></span>
+      </button>
       <ul class="navbar-links">
         <li class="nav-item">
           <a href="index.html">Home</a>
@@ -140,7 +274,7 @@
           <a href="#services">Services</a>
         </li>
         <li class="nav-item">
-          <a href="#training">Training</a>
+          <a href="Training.html">Training</a>
         </li>
         <li class="nav-item">
           <a href="#contact">Contact</a>
@@ -154,12 +288,39 @@
             <li><a href="educational-videos.html">Educational Videos</a></li>
           </ul>
         </li>
+        <li class="nav-item mobile-only">
+          <a href="patient-stories.html">Patient Stories</a>
+        </li>
+        <li class="nav-item mobile-only">
+          <a href="educational-videos.html">Educational Videos</a>
+        </li>
         <li class="nav-item">
           <a href="#donate">Donate</a>
         </li>
       </ul>
     </nav>
   </div>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.navbar-links');
+    const body = document.body;
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      body.classList.toggle('menu-open');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-item a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+        body.classList.remove('menu-open');
+      });
+    });
+  </script>
 </body>
 
 </html>
