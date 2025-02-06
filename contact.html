@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Contact - Department of Palliative Medicine</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .construction-message {
+            max-width: 1352px;
+            margin: 120px auto;
+            padding: 0 48px;
+            text-align: center;
+            color: #002855;
+        }
+
+        .construction-message h1 {
+            font-family: 'Domine', serif;
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .construction-message p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .construction-message {
+                margin: 80px auto;
+                padding: 0 24px;
+            }
+
+            .construction-message h1 {
+                font-size: 36px;
+            }
+
+            .construction-message p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                initializeHamburgerMenu();
+            });
+
+        function initializeHamburgerMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.navbar-links');
+            const body = document.body;
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+
+            document.querySelectorAll('.nav-item a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+        }
+    </script>
+
+    <div class="construction-message">
+        <h1>Page Under Construction</h1>
+        <p>We're working hard to bring you the best content. Please check back soon!</p>
+    </div>
+
+    <div id="footernew"></div>
+    <script>
+        fetch('footernew.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footernew').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>
