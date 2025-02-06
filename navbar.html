@@ -300,27 +300,6 @@
       </ul>
     </nav>
   </div>
-
-  <script>
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.navbar-links');
-    const body = document.body;
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navLinks.classList.toggle('active');
-      body.classList.toggle('menu-open');
-    });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-item a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        body.classList.remove('menu-open');
-      });
-    });
-  </script>
 </body>
 
 </html>
