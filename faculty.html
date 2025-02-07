@@ -25,27 +25,88 @@
 
         .construction-message h1 {
             font-family: 'Domine', serif;
-            font-size: 48px;
-            margin-bottom: 24px;
+            font-size: 72px;
         }
 
-        .construction-message p {
+        .faculty-container {
+            max-width: 1352px;
+            margin: 56px auto;
+            padding: 0 48px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            justify-items: center;
+            max-width: 1384px;
+            /* 320px * 4 + (24px * 3 gaps) + 48px * 2 padding */
+        }
+
+        .faculty-card {
+            width: 320px;
+            height: 455px;
+            border: 4px solid #6089B7;
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .faculty-image {
+            width: 320px;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .faculty-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .faculty-content {
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faculty-name {
+            width: 288px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+
+        .faculty-role {
+            width: 288px;
+            font-family: 'Montserrat', sans-serif;
             font-size: 20px;
-            line-height: 1.5;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+
+        @media (max-width: 1384px) {
+            .faculty-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1080px) {
+            .faculty-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
+            .faculty-container {
+                grid-template-columns: repeat(1, 1fr);
                 padding: 0 24px;
-            }
-
-            .construction-message h1 {
-                font-size: 36px;
-            }
-
-            .construction-message p {
-                font-size: 16px;
             }
         }
     </style>
@@ -83,8 +144,190 @@
     </script>
 
     <div class="construction-message">
-        <h1>Page Under Construction</h1>
-        <p>We're working hard to bring you the best content. Please check back soon!</p>
+        <h1>Our Team</h1>
+    </div>
+
+    <div class="faculty-container">
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Jenifer.png" alt="DR. JENIFER JEBA S">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">DR. JENIFER JEBA S</h3>
+                <p class="faculty-role">Professor And Head</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Dr Shanthi(28610).png" alt="DR. THOTAMPURI SHANTHI PRASOONA">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">DR. THOTAMPURI SHANTHI PRASOONA</h3>
+                <p class="faculty-role">Senior Medical Officer</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Dr Jewell(80451).png" alt="DR. JEWELL JOSEPH">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">DR. JEWELL JOSEPH</h3>
+                <p class="faculty-role">Assistant Professor Gr. II</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Dr Jyothsna(80714).png" alt="DR. JYOTHSNA KURIAKOSE">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">DR. JYOTHSNA KURIAKOSE</h3>
+                <p class="faculty-role">Assistant Professor Gr. II</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Dr Priya(81687).png" alt="DR. SHUNMUGA PRIYA">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">DR. SHUNMUGA PRIYA</h3>
+                <p class="faculty-role">Senior Resident</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Sr Shakila(13429).png" alt="MRS. SHAKILA MURALI">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MRS. SHAKILA MURALI</h3>
+                <p class="faculty-role">Charge Nurse</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Sr Celine(7116).png" alt="MRS. THANGARATHI CELINE">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MRS. THANGARATHI CELINE</h3>
+                <p class="faculty-role">Staff Nurse</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Sr Anitha(74297).png" alt="MRS. ANITHA GLADYS">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MRS. ANITHA GLADYS</h3>
+                <p class="faculty-role">Staff Nurse</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Sr Dally(76203).png" alt="MRS. DALLY STELLA MARY">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MRS. DALLY STELLA MARY</h3>
+                <p class="faculty-role">Staff Nurse</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Mrs Annie(50516).png" alt="MRS. ANNIE JACOB">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MRS. ANNIE JACOB</h3>
+                <p class="faculty-role">Lecturer (NM) Gr. I (Psychologist)</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Mr Ramu(51083).png" alt="MR. RAMU K">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MR. RAMU K</h3>
+                <p class="faculty-role">Sel. Gr. Social Worker</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Mr Shalom(P2022).png" alt="MR. SHALOMRAJ SAMUEL">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MR. SHALOMRAJ SAMUEL</h3>
+                <p class="faculty-role">Asst. Social Worker</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\thumbnail_Mr Raja(53068).png" alt="REV RAJA">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">REV RAJA</h3>
+                <p class="faculty-role">Chaplain</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Mr Joel(P4389).png" alt="MR. CHINNU JOEL G">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MR. CHINNU JOEL G</h3>
+                <p class="faculty-role">Non -Technical Assistant Trainee</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="faculty-container">
+        <div class="faculty-card research-team-card"
+            style="background-color: #6089B7; display: flex; justify-content: center; align-items: center;">
+            <h2
+                style="color: white; font-family: 'Montserrat', sans-serif; font-size: 36px; text-align: center; margin: 0;">
+                RESEARCH<br>TEAM
+            </h2>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Dr Shalom(54601).png" alt="DR. ISSAC SHALOM JEEVATHARAGAL">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">DR. ISSAC SHALOM JEEVATHARAGAL</h3>
+                <p class="faculty-role">Project Research Scientist - I (Medical)</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Mr Guna(44519).png" alt="MR. GUNA G">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MR. GUNA G</h3>
+                <p class="faculty-role">Data Entry Operator (Project)</p>
+            </div>
+        </div>
+
+        <div class="faculty-card">
+            <div class="faculty-image">
+                <img src="Images\Ms Saraa(27340).png" alt="MS. SARAA MOHMED MOHAMED EL AFIFI">
+            </div>
+            <div class="faculty-content">
+                <h3 class="faculty-name">MS. SARAA MOHMED MOHAMED EL AFIFI</h3>
+                <p class="faculty-role">Project Technical Support - III</p>
+            </div>
+        </div>
     </div>
 
     <div id="footernew"></div>
