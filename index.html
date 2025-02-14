@@ -184,6 +184,9 @@
             width: 100%;
             max-width: 319px;
             height: auto;
+            border: 4px solid #6089B7;
+            border-radius: 16px;
+            overflow: hidden;
         }
 
         .service-card img {
@@ -216,23 +219,26 @@
 
 
         .read-more-button {
+            display: block;
             width: 390px;
-            height: 56px;
-            background-color: #6089B7;
+            height: 64px;
+            margin: 56px auto 0;
+            background-color: #002855;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
             font-weight: 600;
             cursor: pointer;
-            display: block;
-            margin: 0 auto;
             transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .read-more-button:hover {
-            background-color: #324a65;
+            background-color: #6089B7;
         }
 
         .schedule {
@@ -307,16 +313,18 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 24px;
-                padding: 24px 16px;
+                padding: 0 16px;
             }
 
             .who-we-are-heading {
                 font-size: 36px;
                 text-align: center;
+                margin-bottom: 16px;
             }
 
             .who-we-are-text {
                 text-align: center;
+                margin-bottom: 24px;
             }
 
             .what-we-do-heading {
@@ -330,6 +338,42 @@
             .read-more-button {
                 width: 100%;
                 max-width: 390px;
+            }
+
+            .who-we-are-section {
+                height: auto;
+                min-height: 280px;
+                padding: 32px 0;
+            }
+
+            .schedule-heading {
+                font-size: 36px;
+                margin-bottom: 8px;
+            }
+
+            .schedule-heading2 {
+                font-size: 28px;
+            }
+
+            .schedule {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+
+        /* Additional adjustments for very small screens */
+        @media (max-width: 360px) {
+            .who-we-are-section {
+                min-height: 320px;
+                padding: 24px 0;
+            }
+
+            .schedule-heading {
+                font-size: 32px;
+            }
+
+            .schedule-heading2 {
+                font-size: 24px;
             }
         }
     </style>
@@ -438,7 +482,7 @@
                 </div>
             </div>
         </div>
-        <button class="read-more-button">Read More</button>
+        <a href="services.html" class="read-more-button" style="text-decoration: none;">Read More</a>
     </div>
     <div class="schedule">
         <h2 class="schedule-heading">Come Visit Us:</h2>
