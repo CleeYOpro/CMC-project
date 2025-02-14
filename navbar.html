@@ -16,26 +16,25 @@
     .navbar-container {
       display: flex;
       justify-content: center;
-      /* Center the navbar horizontally */
       background-color: #002855;
-      /* Match the navbar background color */
+      width: 100%;
     }
 
     .navbar {
       display: flex;
       align-items: center;
-      height: 100px;
-      background-color: #002855;
-      padding: 0 32px;
+      justify-content: space-between;
       max-width: 1352px;
       width: 100%;
+      height: 100px;
+      padding: 0 32px;
+      box-sizing: border-box;
     }
 
     .navbar-logo img {
-      margin-right: 225px;
-      margin-top: 13px;
       height: 72px;
-      width: 360px;
+      width: auto;
+      transition: height 0.3s ease;
     }
 
     .navbar-links {
@@ -43,10 +42,10 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      gap: 32px;
     }
 
     .nav-item {
-      margin-right: 32px;
       position: relative;
     }
 
@@ -54,28 +53,16 @@
       text-decoration: none;
       color: white;
       font-weight: 600;
-      /* Semi-bold */
       font-size: 16px;
       padding: 4px 0;
+      white-space: nowrap;
     }
 
     .nav-item a:hover {
       text-decoration: underline;
-      transition: text-decoration 0.3s;
     }
 
-    /* Remove underline effect for "Resources" */
-    .dropdown-toggle {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .dropdown-icon {
-      margin-left: 4px;
-    }
-
-    /* Dropdown Menu Styles */
+    /* Dropdown styles */
     .dropdown-menu {
       display: none;
       position: absolute;
@@ -90,14 +77,7 @@
     }
 
     .dropdown-menu li {
-      display: block;
-      width: 100%;
-    }
-
-    .dropdown-menu li a {
       padding: 8px 16px;
-      display: block;
-      white-space: nowrap;
     }
 
     .nav-item.dropdown:hover .dropdown-menu {
@@ -105,27 +85,16 @@
     }
 
     .dropdown-icon {
-      font-size: 12px;
       margin-left: 4px;
     }
 
-    /* Adjust alignment for all nav items */
-    .nav-item a,
-    .dropdown-toggle {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      /* Aligns text with "Resources" */
-    }
-
-    /* Hamburger Menu Styles */
+    /* Hamburger styles */
     .hamburger {
       display: none;
       cursor: pointer;
-      border: none;
       background: none;
+      border: none;
       padding: 10px;
-      margin-left: auto;
     }
 
     .hamburger-icon {
@@ -172,24 +141,34 @@
       display: none;
     }
 
-    /* Mobile Menu Styles */
-    @media (max-width: 768px) {
+    /* Desktop minimum width */
+    @media (min-width: 950px) {
+      .navbar-links {
+        display: flex !important;
+        /* Force display for desktop */
+      }
+    }
+
+    /* Mobile styles */
+    @media (max-width: 950px) {
       .navbar {
-        justify-content: space-between;
-        padding: 0 20px;
+        padding: 0 16px;
+      }
+
+      .navbar-logo {
+        position: relative;
+        z-index: 1002;
+        /* Above the menu overlay */
       }
 
       .navbar-logo img {
-        margin-right: 0;
-        height: 60px;
-        width: auto;
-        position: relative;
-        z-index: 1002;
+        height: 56px;
       }
 
       .hamburger {
         display: block;
-        z-index: 1001;
+        z-index: 1002;
+        /* Same as logo */
       }
 
       .navbar-links {
@@ -200,12 +179,12 @@
         height: 100vh;
         background-color: #002855;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: flex-start;
-        padding: 100px 40px 40px;
+        padding: 100px 32px 32px;
         transform: translateY(-100%);
         transition: transform 0.3s ease-in-out;
-        z-index: 1000;
+        z-index: 1001;
+        gap: 24px;
       }
 
       .navbar-links.active {
@@ -214,38 +193,100 @@
 
       .nav-item {
         width: 100%;
-        margin: 10px 0;
-        text-align: left;
       }
 
       .nav-item a {
         font-size: 20px;
-        padding: 12px 0;
-        justify-content: flex-start;
+        display: block;
+        padding: 8px 0;
       }
 
-      /* Hide dropdown in mobile menu */
+      /* Hide dropdown in mobile */
       .nav-item.dropdown {
         display: none;
       }
 
-      /* Show mobile-only items in hamburger menu */
+      /* Show mobile-only items */
       .nav-item.mobile-only {
         display: block;
-        width: 100%;
-        margin: 10px 0;
-        text-align: left;
       }
 
-      .nav-item.mobile-only a {
-        font-size: 20px;
-        padding: 12px 0;
-        justify-content: flex-start;
+      /* Hamburger animation */
+      .hamburger.active .hamburger-icon {
+        background: transparent;
       }
 
-      /* Prevent scrolling when menu is open */
-      body.menu-open {
-        overflow: hidden;
+      .hamburger.active .hamburger-icon::before {
+        transform: rotate(45deg) translate(0, 0);
+      }
+
+      .hamburger.active .hamburger-icon::after {
+        transform: rotate(-45deg) translate(0, 0);
+      }
+    }
+
+    /* Medium small screens */
+    @media (max-width: 480px) {
+      .navbar {
+        padding: 0 12px;
+      }
+
+      .navbar-logo img {
+        height: 48px;
+      }
+
+      .hamburger {
+        padding: 8px;
+      }
+
+      .hamburger-icon {
+        width: 24px;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 360px) {
+      .navbar {
+        padding: 0 8px;
+        height: 80px;
+      }
+
+      .navbar-logo img {
+        height: 40px;
+      }
+
+      .hamburger {
+        padding: 6px;
+      }
+
+      .hamburger-icon {
+        width: 20px;
+        height: 2px;
+      }
+
+      .hamburger-icon::before {
+        transform: translateY(-8px);
+      }
+
+      .hamburger-icon::after {
+        transform: translateY(8px);
+      }
+
+      .navbar-links {
+        padding: 70px 16px 16px;
+      }
+
+      .nav-item a {
+        font-size: 16px;
+        padding: 6px 0;
+      }
+    }
+
+    /* Ensure menu is scrollable on very small heights */
+    @media (max-height: 600px) {
+      .navbar-links {
+        overflow-y: auto;
+        padding-bottom: 60px;
       }
     }
   </style>
@@ -255,45 +296,55 @@
   <div class="navbar-container">
     <nav class="navbar">
       <div class="navbar-logo">
-        <img src="Images/Full_logo.png" alt="Department Logo" width="360" height="72" />
+        <img src="Images/actual_logo.png" alt="Department Logo" />
       </div>
       <button class="hamburger">
         <span class="hamburger-icon"></span>
       </button>
       <ul class="navbar-links">
-        <li class="nav-item">
-          <a href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="aboutus.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="faculty.html">Faculty</a>
-        </li>
-        <li class="nav-item">
-          <a href="services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a href="Training.html">Training</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html">Contact</a>
-        </li>
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="aboutus.html">About</a></li>
+        <li class="nav-item"><a href="faculty.html">Faculty</a></li>
+        <li class="nav-item"><a href="services.html">Services</a></li>
+        <li class="nav-item"><a href="Training.html">Training</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <!-- Desktop dropdown -->
         <li class="nav-item dropdown">
-          <a href="#" class="dropdown-toggle">
-            Resources <span class="dropdown-icon">▼</span>
-          </a>
+          <a href="#" class="dropdown-toggle">Resources <span class="dropdown-icon">▼</span></a>
           <ul class="dropdown-menu">
             <li><a href="patient-stories.html">Patient Stories</a></li>
             <li><a href="educational-videos.html">Educational Videos</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a href="donate.html">Donate</a>
-        </li>
+        <!-- Mobile-only items -->
+        <li class="nav-item mobile-only"><a href="patient-stories.html">Patient Stories</a></li>
+        <li class="nav-item mobile-only"><a href="educational-videos.html">Educational Videos</a></li>
+        <li class="nav-item"><a href="donate.html">Donate</a></li>
       </ul>
     </nav>
   </div>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navbarLinks = document.querySelector(".navbar-links");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navbarLinks.classList.toggle("active");
+      document.body.classList.toggle("menu-open");
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!hamburger.contains(e.target) &&
+        !navbarLinks.contains(e.target) &&
+        navbarLinks.classList.contains("active")) {
+        hamburger.classList.remove("active");
+        navbarLinks.classList.remove("active");
+        document.body.classList.remove("menu-open");
+      }
+    });
+  </script>
 </body>
 
 </html>

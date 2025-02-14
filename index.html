@@ -14,13 +14,17 @@
         .container1 {
             display: flex;
             margin: 80px auto;
-            width: 80%;
-            max-width: 1352;
+            width: 100%;
+            max-width: 1352px;
+            padding: 0 32px;
+            box-sizing: border-box;
         }
 
         .text-container {
-            width: 549px;
-            height: 659px;
+            width: 100%;
+            max-width: 549px;
+            height: auto;
+            min-height: 659px;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -28,10 +32,12 @@
         }
 
         .textbox {
-            width: 549px;
-            height: 324px;
+            width: 100%;
+            max-width: 549px;
+            height: auto;
+            min-height: 324px;
             background-color: #ffffff;
-            font-size: 60px;
+            font-size: clamp(36px, 5vw, 60px);
             font-family: 'Domine', serif;
             font-weight: bold;
             text-align: left;
@@ -69,10 +75,11 @@
         }
 
         .image-box {
-            width: 683px;
-            height: 658px;
-            background-color: #ffffff;
-            margin-left: 118px;
+            width: 100%;
+            max-width: 683px;
+            height: auto;
+            aspect-ratio: 683/658;
+            margin-left: 32px;
             position: relative;
             overflow: hidden;
         }
@@ -153,9 +160,9 @@
 
         .what-we-do-section {
             max-width: 1352px;
-            height: 701px;
-            margin: 80px auto 0;
+            margin: 80px auto;
             padding: 0 32px;
+            box-sizing: border-box;
         }
 
         .what-we-do-heading {
@@ -167,24 +174,22 @@
         }
 
         .service-cards-container {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 56px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            justify-items: center;
         }
 
         .service-card {
-            width: 319px;
-            height: 452px;
-            border: 3px solid #002855;
-            border-radius: 16px;
-            overflow: hidden;
-
+            width: 100%;
+            max-width: 319px;
+            height: auto;
         }
 
         .service-card img {
-            width: 325px;
-            height: 288px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 325/288;
             object-fit: cover;
         }
 
@@ -253,13 +258,79 @@
         }
 
         .schedule-table {
-            margin-top: 56px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 80px;
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-            border-radius: 0 16px 16px 16px;
+            width: 100%;
+            max-width: 1352px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 1200px) {
+            .container1 {
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container1 {
+                flex-direction: column;
+                align-items: center;
+                gap: 32px;
+            }
+
+            .image-box {
+                margin-left: 0;
+                max-width: 100%;
+            }
+
+            .text-container,
+            .textbox {
+                max-width: 100%;
+                min-height: unset;
+            }
+
+            .who-we-are-heading {
+                font-size: 48px;
+            }
+
+            .what-we-do-heading {
+                font-size: 48px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container1 {
+                margin: 40px auto;
+                padding: 0 16px;
+            }
+
+            .who-we-are-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 24px;
+                padding: 24px 16px;
+            }
+
+            .who-we-are-heading {
+                font-size: 36px;
+                text-align: center;
+            }
+
+            .who-we-are-text {
+                text-align: center;
+            }
+
+            .what-we-do-heading {
+                font-size: 36px;
+            }
+
+            .service-cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            .read-more-button {
+                width: 100%;
+                max-width: 390px;
+            }
         }
     </style>
 </head>
