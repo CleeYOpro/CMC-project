@@ -15,37 +15,255 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .construction-message {
+        .services-container {
             max-width: 1352px;
-            margin: 120px auto;
-            padding: 0 48px;
+            margin: 80px auto;
+            padding: 0 32px;
+        }
+
+        .services-title {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            color: #002855;
             text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .services-nav {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-nav-item {
+            color: #002855;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            text-decoration: none;
+        }
+
+        .service-nav-item:hover,
+        .service-nav-item.active {
+            color: white;
+        }
+
+        .service-nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #6089B7;
+            border-radius: 4px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-nav-item:hover::before,
+        .service-nav-item.active::before {
+            opacity: 1;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .service-card {
+            display: flex;
+            max-width: 1120px;
+            height: 324px;
+            border: 4px solid #6089B7;
+            border-radius: 16px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .service-image {
+            width: 436px;
+            height: 324px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-content {
+            flex: 1;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: #002855;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            font-size: 16px;
+            line-height: 1.5;
             color: #002855;
         }
 
-        .construction-message h1 {
-            font-family: 'Domine', serif;
-            font-size: 48px;
-            margin-bottom: 24px;
-        }
+        @media (max-width: 1200px) {
+            .service-card {
+                max-width: 100%;
+                height: auto;
+                flex-direction: column;
+            }
 
-        .construction-message p {
-            font-size: 20px;
-            line-height: 1.5;
+            .service-image {
+                width: 100%;
+                height: 276px;
+            }
+
+            .service-content {
+                padding: 24px;
+            }
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
-                padding: 0 24px;
+            .services-container {
+                padding: 0 16px;
+                margin: 40px auto;
             }
 
-            .construction-message h1 {
-                font-size: 36px;
+            .services-title {
+                font-size: 48px;
+                margin-bottom: 32px;
             }
 
-            .construction-message p {
-                font-size: 16px;
+            .services-nav {
+                gap: 12px;
+            }
+
+            .service-nav-item {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+
+            .service-title {
+                font-size: 20px;
+            }
+
+            .service-description {
+                font-size: 14px;
+            }
+        }
+
+        .service-card.domiciliary {
+            max-width: 1120px;
+            height: 440px;
+            display: flex;
+            align-items: center;
+        }
+
+        .service-card.domiciliary .service-content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-card.domiciliary .service-image {
+            width: 436px;
+            height: 440px;
+        }
+
+        @media (max-width: 1200px) {
+            .service-card.domiciliary {
+                height: auto;
+            }
+
+            .service-card.domiciliary .service-image {
+                width: 100%;
+                height: 276px;
+            }
+        }
+
+        .team-visit,
+        .nurse-visit {
+            margin-top: 16px;
+        }
+
+        .team-visit h3,
+        .nurse-visit h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #002855;
+            margin-bottom: 8px;
+        }
+
+        /* Add smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            padding: 8px 16px;
+            border-radius: 25px;
+            background-color: #6089B7;
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            font-family: 'Domine', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 6px rgba(12, 19, 46, 0.334);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-to-top span {
+            display: inline-block;
+            font-size: 20px;
+            margin-top: -2px;
+        }
+
+        .back-to-top:hover {
+            background-color: #6089B7;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+
+            .back-to-top span {
+                font-size: 18px;
             }
         }
     </style>
@@ -82,9 +300,191 @@
         }
     </script>
 
-    <div class="construction-message">
-        <h1>Page Under Construction</h1>
-        <p>We're working hard to bring you the best content. Please check back soon!</p>
+    <div class="services-container">
+        <h1 class="services-title">Services</h1>
+
+        <div class="services-nav">
+            <a href="#outpatient" class="service-nav-item">Outpatient</a>
+            <a href="#inpatient" class="service-nav-item">Inpatient</a>
+            <a href="#consultation" class="service-nav-item">Consultation</a>
+            <a href="#palliative-nursing" class="service-nav-item">Palliative Nursing</a>
+            <a href="#social-care" class="service-nav-item">Social Care</a>
+            <a href="#psycho-oncology" class="service-nav-item">Psycho-oncology Services</a>
+            <a href="#domiciliary" class="service-nav-item">Domiciliary</a>
+            <a href="#hospice" class="service-nav-item">Hospice</a>
+            <a href="#bereavement" class="service-nav-item">Bereavement</a>
+            <a href="#spiritual-support" class="service-nav-item">Spiritual Support</a>
+        </div>
+
+        <div class="service-cards">
+            <!-- Outpatient Services -->
+            <div class="service-card" id="outpatient">
+                <div class="service-image">
+                    <img src="Images/checking out.png" alt="Outpatient Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Outpatient Services</h2>
+                    <p class="service-description">
+                        Our outpatient clinic is run by a multidisciplinary team consisting of doctors, nurses, social
+                        worker, psychologist and chaplain. We provide active symptom management and supportive care to
+                        patients at various stages of life at palliative care clinic. Follow up is ensured by systematic
+                        appointment at regular intervals. We aim to improve quality of life and relieve suffering.
+                        Regular follow-up is ensured.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Inpatient Services -->
+            <div class="service-card" id="inpatient">
+                <div class="service-image">
+                    <img src="Images/Palliative care nurses feeding a patient in hospice.png" alt="Inpatient Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Inpatient Services</h2>
+                    <p class="service-description">
+                        Patients are admitted to palliative care ward for purpose of symptom control, nursing care,
+                        terminal care. We also have 6 or 8 palliative caregivers trained by our department who help in
+                        patient care. The team consisting of doctor, nurse, chaplain, social worker and psychologist,
+                        conducts a comprehensive and detailed bedside round of the morning and evening to each
+                        in-patient. Our ward is equipped with all necessary facilities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Consultation Services -->
+            <div class="service-card" id="consultation">
+                <div class="service-image">
+                    <img src="Images/doctor office.png" alt="Consultation Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Consultation Services</h2>
+                    <p class="service-description">
+                        The Department of Palliative Medicine provides consultative services to various wards where
+                        patients requiring evaluation and management of distressing symptoms are being cared. We also
+                        assist in end of life care and bereavement support. The team consists of doctor, nurse and
+                        psychologist.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Palliative Nursing Services -->
+            <div class="service-card" id="palliative-nursing">
+                <div class="service-image">
+                    <img src="Images/Palliative care nurse teaching nasogastric tube feeding.png"
+                        alt="Palliative Nursing Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Palliative Nursing Services</h2>
+                    <p class="service-description">
+                        Palliative care nurses focus on treating and implementing strategies to manage symptoms, take
+                        care of patients who are confined to bed and handle complex wounds. They also assist in end of
+                        life care. The nurses ensure that patients can receive the care they need in the comfort of
+                        their own homes, reducing the need for frequent hospital visits during their illness.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social Care -->
+            <div class="service-card" id="social-care">
+                <div class="service-image">
+                    <img src="Images/Social worker assessment at home.png" alt="Social Care">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Social Care</h2>
+                    <p class="service-description">
+                        Palliative care social worker helps in assessment of patients' socio-economic status and
+                        provides guidance for financial support through various schemes and procedures as appropriate.
+                        This is possible through the generous donations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Psycho-oncology Services -->
+            <div class="service-card" id="psycho-oncology">
+                <div class="service-image">
+                    <img src="Images/mind.png" alt="Psycho-oncology Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Psycho-oncology Services</h2>
+                    <p class="service-description">
+                        A palliative care psychologist offers counseling to oncology patients and their families to help
+                        them cope with the psychological impact of a life-threatening illness. This service is available
+                        to both outpatients and inpatients, ensuring emotional support is accessible to all who need it.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Domiciliary Services - Special size -->
+            <div class="service-card domiciliary" id="domiciliary">
+                <div class="service-image">
+                    <img src="Images/Psychologist providing counselling during home visit.png"
+                        alt="Domiciliary Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Domiciliary Services</h2>
+                    <p class="service-description">
+                        The Department of Palliative Medicine runs a comprehensive home care service for patients who
+                        are unable to come to the hospital. The team consisting of specialized home care nurses and
+                        conducted after triaging priority for the patients.<br><strong>Team visit: </strong>A team
+                        consisting of specialist palliative care physician, nurse, social worker and chaplain
+                        visits homes of patients who are unable to come to the hospital. The key goals are to reduce
+                        suffering, and provide ongoing care wherever possible (pain & nursing care, spiritual
+                        support, social support, bereavement support).<br><strong>Nurse visit: </strong>Those patients
+                        who are not ambulatory and bed bound for prolonged periods are requiring
+                        nursing interventions are visited by the palliative care nurse.<br><strong>Social worker's
+                            visit: </strong>
+                        Social worker and chaplain visits the families of patients and assesses the
+                        support systems available for the patient.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hospice -->
+            <div class="service-card" id="hospice">
+                <div class="service-image">
+                    <img src="Images/Doctor examining a patient in hospice.png" alt="Hospice">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Hospice</h2>
+                    <p class="service-description">
+                        The Department runs a 15-bedded hospice situated 5 km away from the hospital. This is a place of
+                        comfort and care for patients who are unable to continue care at hospital or home for various
+                        reasons. This is primarily a life-care bed facility for terminally ill patients.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bereavement Services -->
+            <div class="service-card" id="bereavement">
+                <div class="service-image">
+                    <img src="Images/hands.png" alt="Bereavement Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Bereavement Services</h2>
+                    <p class="service-description">
+                        The team maintains a continuity of care after death of the patient by providing bereavement
+                        support to relatives. In consultation with the family members, those who are at risk of
+                        developing prolonged grief disorder are identified, counselled by our psychologist and are
+                        guided to take professional help as required.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Spiritual Support Services -->
+            <div class="service-card" id="spiritual-support">
+                <div class="service-image">
+                    <img src="Images/spiritual.png" alt="Spiritual Support Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Spiritual Support Services</h2>
+                    <p class="service-description">
+                        Any patient or family with spiritual distress especially nearing end of life are provided with
+                        spiritual support and services by the chaplain in the inpatient, outpatient, home and hospice
+                        settings.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="footernew"></div>
@@ -94,6 +494,69 @@
             .then(data => {
                 document.getElementById('footernew').innerHTML = data;
             });
+    </script>
+
+    <script>
+        // Update active nav item based on scroll position
+        const serviceCards = document.querySelectorAll('.service-card');
+        const navItems = document.querySelectorAll('.service-nav-item');
+
+        function updateActiveNav() {
+            const fromTop = window.scrollY + 100;
+
+            serviceCards.forEach(card => {
+                const section = card;
+                const link = document.querySelector(`.service-nav-item[href="#${section.id}"]`);
+
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Smooth scroll to section when clicking nav items
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = item.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
+    </script>
+
+    <button class="back-to-top" title="Back to Top"><span>⬆️</span> BACK TO TOP</button>
+
+    <script>
+        // Back to Top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
     </script>
 </body>
 
