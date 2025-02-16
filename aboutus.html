@@ -84,7 +84,7 @@
 
         .care-image {
             flex: 1;
-            min-height: 614px;
+            max-height: 614px;
             border-radius: 16px;
             max-width: 685px;
         }
@@ -134,14 +134,17 @@
                 padding: 0 32px;
             }
 
-            .care-image,
+            .care-image{
+                max-width: 100%;
+                margin-bottom: 24px;
+            }
             .care-content {
                 max-width: 100%;
-                margin-bottom: 0px;
             }
 
             .care-title {
                 font-size: 36px;
+                margin-top: 16px;
             }
         }
 
@@ -264,7 +267,7 @@
             margin: 0 auto 48px;
             padding: 0 48px;
             display: flex;
-            gap: 40px;
+            gap: 16px;
             align-items: flex-start;
         }
 
@@ -278,7 +281,7 @@
         .award-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             display: block;
         }
 
@@ -319,8 +322,9 @@
         /* Responsive styles */
         @media (max-width: 1200px) {
             .award-container {
-                padding: 0 40px;
+                padding: 80px 40px;
             }
+            
         }
 
         @media (max-width: 992px) {
@@ -329,32 +333,27 @@
                 padding: 0 32px;
             }
 
-            .award-image {
-                width: 437px;
-                height: 312px;
-                margin: 0 auto;
+            .award-image{
+                max-width: 100%;
+                margin-bottom: 24px;
             }
-
             .award-content {
-                align-items: center;
-                text-align: center;
-            }
-
-            .award-button {
-                width: 100%;
-                max-width: 390px;
+                max-width: 100%;
             }
         }
 
-        @media (max-width: 480px) {
-            .award-image {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 437/312;
+        @media (max-width: 450px) {
+            .award-container {
+                margin: 40px auto;
+                padding: 0 20px;
+            }
+
+            .award-content {
+                font-size: 32px;
             }
 
             .award-text {
-                font-size: 24px;
+                font-size: 20px;
             }
         }
 

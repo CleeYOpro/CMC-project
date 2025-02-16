@@ -7,8 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
     <style>
         #navbar {
-            margin-bottom: 60px;
-            /* Add some space below the navbar */
+            margin-bottom: 48px;
         }
 
         .container1 {
@@ -22,9 +21,9 @@
 
         .text-container {
             width: 100%;
-            max-width: 549px;
+            max-width: 875px;
             height: auto;
-            min-height: 659px;
+            min-height: 404px;
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
@@ -33,9 +32,9 @@
 
         .textbox {
             width: 100%;
-            max-width: 549px;
+            max-width: 677px;
             height: auto;
-            min-height: 324px;
+            min-height: 291px;
             background-color: #ffffff;
             font-size: clamp(36px, 5vw, 60px);
             font-family: 'Domine', serif;
@@ -45,6 +44,7 @@
             position: relative;
             overflow: hidden;
             margin-bottom: 20px;
+            display: flex;
         }
 
         .slide {
@@ -60,14 +60,15 @@
         }
 
         .controls {
-            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .text-container i {
             padding-right: 22px;
-            margin-top: 20px;
             cursor: pointer;
-            font-size: 160px;
+            font-size: 98px;
         }
 
         .text-container i:hover {
@@ -76,9 +77,9 @@
 
         .image-box {
             width: 100%;
-            max-width: 683px;
-            height: auto;
-            aspect-ratio: 683/658;
+            max-width: 418px;
+            height: 100%;
+            aspect-ratio: 418/403;
             margin-left: 32px;
             position: relative;
             overflow: hidden;
@@ -103,7 +104,7 @@
             background-color: #002855;
             height: 173px;
             margin-top: 60px;
-            padding: 40px 0;
+            padding: 40px 0px;
             color: rgb(253, 253, 253);
         }
 
@@ -118,6 +119,7 @@
 
         .who-we-are-content {
             max-width: 905px;
+
         }
 
         .who-we-are-heading {
@@ -133,6 +135,7 @@
             font-size: 16px;
             line-height: 135%;
             margin: 0;
+
             font-weight: 500;
 
         }
@@ -276,11 +279,13 @@
             }
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 768px) {
             .container1 {
                 flex-direction: column;
                 align-items: center;
                 gap: 32px;
+                margin: 40px auto;
+                padding: 0 16px;
             }
 
             .image-box {
@@ -294,41 +299,24 @@
                 min-height: unset;
             }
 
-            .who-we-are-heading {
-                font-size: 48px;
-            }
-
-            .what-we-do-heading {
-                font-size: 48px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container1 {
-                margin: 40px auto;
-                padding: 0 16px;
-            }
-
             .who-we-are-wrapper {
                 flex-direction: column;
-                align-items: center;
+                align-items: left;
                 gap: 24px;
                 padding: 0 16px;
             }
 
-            .who-we-are-heading {
+            .who-we-are-heading,
+            .what-we-do-heading,
+            .schedule-heading {
                 font-size: 36px;
                 text-align: center;
                 margin-bottom: 16px;
             }
 
             .who-we-are-text {
-                text-align: center;
+                text-align: left;
                 margin-bottom: 24px;
-            }
-
-            .what-we-do-heading {
-                font-size: 36px;
             }
 
             .service-cards-container {
@@ -346,35 +334,110 @@
                 padding: 32px 0;
             }
 
-            .schedule-heading {
-                font-size: 36px;
-                margin-bottom: 8px;
-            }
-
             .schedule-heading2 {
                 font-size: 28px;
             }
 
             .schedule {
-                margin-top: 40px;
-                margin-bottom: 40px;
+                margin: 40px 0;
             }
         }
 
+
         /* Additional adjustments for very small screens */
         @media (max-width: 360px) {
-            .who-we-are-section {
-                min-height: 320px;
-                padding: 24px 0;
+            .container1 {
+                flex-direction: column;
+                margin: 20px;
+                padding: 0;
             }
 
-            .schedule-heading {
-                font-size: 32px;
+            .text-container {
+                width: 100%;
+                max-width: 334px;
+                min-height: unset;
+                flex-direction: column;
+                gap: 8px;
             }
 
-            .schedule-heading2 {
-                font-size: 24px;
+            .textbox {
+                width: 100%;
+                max-width: 334px;
+                min-height: unset;
+                font-size: 16px;
+                line-height: 135%;
+                margin-bottom: 8px;
+                padding: 0;
+                position: relative;
+                height: auto;
             }
+
+            .slide {
+                position: relative;
+                width: 100%;
+                height: auto;
+                opacity: 0;
+                display: none;
+            }
+
+            .slide.active {
+                opacity: 1;
+                display: block;
+                position: relative;
+            }
+
+            .controls {
+                display: flex;
+                gap: 8px;
+                margin-top: 0;
+                justify-content: flex-start;
+            }
+
+            .text-container i {
+                font-size: 60px;
+                padding-right: 0;
+            }
+
+            .image-box {
+                width: 100%;
+                max-width: 334px;
+                margin: 0;
+                aspect-ratio: 334/60;
+                position: relative;
+            }
+
+            .image-box img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .who-we-are-text {
+                text-align: left;
+                margin-bottom: 24px;
+            }
+
+            .progress-container {
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Add progress bar styles */
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background-color: #e0e0e0;
+            margin-bottom: 8px;
+            border-radius: 2px;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #6089B7;
+            transition: width 3s linear;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -416,8 +479,13 @@
                 <div class="slide">Palliative care nurse dresses a wound during a home visit.</div>
             </div>
             <div class="controls">
-                <i class="fa-solid fa-square-caret-left" style="color: #6089B7;" onclick="changeSlide(-1)"></i>
-                <i class="fa-solid fa-square-caret-right" style="color: #6089B7;" onclick="changeSlide(1)"></i>
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="arrows">
+                    <i class="fa-solid fa-square-caret-left" style="color: #6089B7;" onclick="changeSlide(-1)"></i>
+                    <i class="fa-solid fa-square-caret-right" style="color: #6089B7;" onclick="changeSlide(1)"></i>
+                </div>
             </div>
         </div>
         <div class="image-box">
@@ -487,7 +555,39 @@
     <div class="schedule">
         <h2 class="schedule-heading">Come Visit Us:</h2>
         <h2 class="schedule-heading2">Our Schedule for Outpatient Care</h2>
-        <img src="Images\come_visit.png" alt="ef" class="schedule-table">
+        <table>
+            <tr>
+                <th><strong>Day</strong></th>
+                <th>Town Campus (PCF Extention 1st Floor)</th>
+                <th>Ranipet Campus (A0002, Basement, Rooms 27-32)</th>
+                <th>Chitoor Campus</th>
+            </tr>
+            <tr>
+                <th>Monday</th>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Outpatient 1</td>
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Outpatient 2</td>
+            </tr>
+            <tr>
+                <td>Wednesday</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Outpatient 3</td>
+            </tr>
+            <tr>
+                <td>Thursday</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Outpatient 4</td>
+            </tr>
+            <tr>
+                <td>Friday</td>
+                <td>10:00 AM - 12:00 PM</td>
+                <td>Outpatient 5</td>
+            </tr>
+        </table>
     </div>
     <div id="footernew"></div>
     <script>
@@ -501,24 +601,79 @@
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const images = document.querySelectorAll('.image-box img');
+        const progressBar = document.querySelector('.progress-bar');
+        let slideInterval;
 
         function showSlide(index) {
-            // Remove active class from all slides and images
             slides.forEach(slide => slide.classList.remove('active'));
             images.forEach(image => image.classList.remove('active'));
 
-            // Add active class to current slide and image
             slides[index].classList.add('active');
             images[index].classList.add('active');
+
+            // Reset and start progress bar
+            progressBar.style.width = '0%';
+            void progressBar.offsetWidth; // Force reflow
+            progressBar.style.width = '100%';
         }
 
         function changeSlide(direction) {
-            currentSlide = currentSlide === 0 ? 1 : 0;
+            // Reset progress bar transition
+            progressBar.style.transition = 'none';
+            progressBar.style.width = '0%';
+
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
             showSlide(currentSlide);
+
+            // Reset timer
+            clearInterval(slideInterval);
+            startSlideShow();
         }
 
-        // Initialize the first slide
+        function autoSlide() {
+            changeSlide(1);
+        }
+
+        function startSlideShow() {
+            // Reset progress bar
+            progressBar.style.transition = 'width 3s linear';
+            progressBar.style.width = '100%';
+
+            slideInterval = setInterval(autoSlide, 3000);
+        }
+
+        function pauseSlideShow() {
+            clearInterval(slideInterval);
+            // Pause progress bar
+            const width = progressBar.offsetWidth;
+            progressBar.style.transition = 'none';
+            progressBar.style.width = width + 'px';
+        }
+
+        function resumeSlideShow() {
+            const remainingWidth = (1 - progressBar.offsetWidth / progressBar.parentElement.offsetWidth) * 100;
+            const remainingTime = (remainingWidth / 100) * 3000;
+
+            progressBar.style.transition = `width ${remainingTime}ms linear`;
+            progressBar.style.width = '100%';
+
+            slideInterval = setInterval(autoSlide, 3000);
+        }
+
+        // Add event listeners
+        document.querySelector('.container1').addEventListener('mouseenter', pauseSlideShow);
+        document.querySelector('.container1').addEventListener('mouseleave', resumeSlideShow);
+
+        document.querySelectorAll('.controls i').forEach(control => {
+            control.addEventListener('click', () => {
+                pauseSlideShow();
+                setTimeout(startSlideShow, 3000);
+            });
+        });
+
+        // Initialize
         showSlide(0);
+        startSlideShow();
     </script>
 </body>
 
