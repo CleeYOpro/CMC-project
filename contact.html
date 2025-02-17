@@ -15,40 +15,183 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .construction-message {
-            width: 100%;
-            max-width: 1352px;
-            margin: 120px auto;
-            padding: 0 24px;
-            text-align: center;
-            color: #002855;
-            box-sizing: border-box;
+        .contact-container {
+            display: flex;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
         }
 
-        .construction-message h1 {
+        .contact-info {
+            flex: 1;
+        }
+
+        .map-container {
+            flex: 1;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #003087;
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
             font-family: 'Domine', serif;
-            font-size: 48px;
-            margin-bottom: 24px;
         }
 
-        .construction-message p {
-            font-size: 20px;
-            line-height: 1.5;
+        .contact-intro {
+            color: #333;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .contact-method {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-method i {
+            font-size: 2.1rem;
+            padding-top: 0.5rem;
+        }
+
+        .contact-method .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-method a {
+            color: #003087;
+            text-decoration: underline;
+            display: block;
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+
+        .contact-label {
+            color: #6089B7;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .locations {
+            margin-top: 3rem;
+        }
+
+        .location-info {
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #003087;
+        }
+
+        .locations ol {
+            list-style-position: inside;
+            padding-left: 0;
+            counter-reset: location-counter;
+            color: #003087;
+        }
+
+        .locations ol li {
+            counter-increment: location-counter;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 650;
+            color: #003087;
+        }
+
+        .locations ol li::marker {
+            color: #003087;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 600px;
+            border: none;
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
-                padding: 0 16px;
-                width: 100%;
+            .contact-container {
+                flex-direction: column;
+                padding: 1rem;
             }
 
-            .construction-message h1 {
-                font-size: 36px;
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 0.5rem;
             }
 
-            .construction-message p {
-                font-size: 16px;
+            .contact-intro {
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+
+            .contact-method {
+                margin-bottom: 2rem;
+            }
+
+            .contact-method i {
+                font-size: 1.8rem;
+                padding-top: 0.3rem;
+            }
+
+            .contact-method a {
+                font-size: 1.3rem;
+            }
+
+            .contact-label {
+                font-size: 0.8rem;
+            }
+
+            .location-info {
+                font-size: 1.1rem;
+            }
+
+            .locations ol li {
+                font-size: 1.1rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .map-container {
+                margin-top: 2rem;
+            }
+
+            iframe {
+                min-height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-method i {
+                font-size: 1.5rem;
+                padding-top: 0.2rem;
+            }
+
+            .contact-method a {
+                font-size: 1.1rem;
+            }
+
+            .locations ol li {
+                font-size: 1rem;
+            }
+
+            .contact-container {
+                padding: 0.8rem;
+            }
+
+            iframe {
+                min-height: 300px;
             }
         }
     </style>
@@ -85,14 +228,47 @@
         }
     </script>
 
-    <div class="googlemaps">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.7397024481106!2d79.1352769!3d12.924444299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bad3894c53f4cf7%3A0x4013f2038d8018bb!2sChristian%20Medical%20College%20Vellore!5e0!3m2!1sen!2sus!4v1739684154485!5m2!1sen!2sus"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            width = "300px";
-            height="400px"
-            ></iframe>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>Contact Us</h1>
+            <p class="contact-intro">We're here to help with any questions or with the support you need.</p>
+            
+            <div class="contact-method">
+                <i class="fa-solid fa-envelope" style="color: #0b3c72;"></i>
+                <div class="contact-text">
+                    <a href="mailto:palcare@cmcvellore.ac.in">palcare@cmcvellore.ac.in</a>
+                    <div class="contact-label">SHOOT US AN EMAIL</div>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <i class="fa-solid fa-phone" style="color: #0b3c72;"></i>
+                <div class="contact-text">
+                    <a href="tel:+914162283159">+91 0416-228-3159</a>
+                    <div class="contact-label">DROP US A CALL</div>
+                </div>
+            </div>
+
+            <div class="locations">
+                <h1>Locations</h1>
+                <p class="location-info">Palliative care at CMC Vellore is available at the Main, Ranipet, and Chittoor campuses, with dedicated outpatient clinic locations.</p>
+                
+                <ol>
+                    <li>CMC Vellore, Main Campus IDA<br>
+                    Scudder Road Vellore - 632004.</li>
+
+                    <li>CMC Vellore, Ranipet Campus<br>
+                    Ratnagiri Kilminnal Village, Ranipet - 632517.</li>
+
+                    <li>CMC Vellore, Chittor Campus<br>
+                    Cheelapalli Village, Chittoor dist. AP - 517002.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1iLJVCbQ6gwmtw3hBRmsnqG9ThDHjYNU&ehbc=2E312F&noprof=1"></iframe>
+        </div>
     </div>
 
     <div id="footernew"></div>
