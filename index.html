@@ -273,6 +273,61 @@
             object-fit: contain;
         }
 
+        .schedule-container {
+            max-width: 1250px;
+            margin: 0 auto;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        table {
+            width: 100%;
+            min-width: 800px;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 2px solid #dddddd69;
+        }
+
+        th {
+            background-color: #002855;
+            color: white;
+            text-align: center;
+        }
+
+        td {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        tr:last-child td:first-child {
+            border-bottom-left-radius: 10px;
+        }
+
+        tr:last-child td:last-child {
+            border-bottom-right-radius: 10px;
+        }
+
+        th:first-child, td:first-child {
+            font-weight: bold;
+        }
+
         @media (max-width: 1200px) {
             .container1 {
                 padding: 0 24px;
@@ -340,6 +395,10 @@
 
             .schedule {
                 margin: 40px 0;
+            }
+
+            .schedule-container {
+                padding: 0 20px;
             }
         }
 
@@ -553,41 +612,47 @@
         <a href="services.html" class="read-more-button" style="text-decoration: none;">Read More</a>
     </div>
     <div class="schedule">
-        <h2 class="schedule-heading">Come Visit Us:</h2>
         <h2 class="schedule-heading2">Our Schedule for Outpatient Care</h2>
-        <table>
-            <tr>
-                <th><strong>Day</strong></th>
-                <th>Town Campus (PCF Extention 1st Floor)</th>
-                <th>Ranipet Campus (A0002, Basement, Rooms 27-32)</th>
-                <th>Chitoor Campus</th>
-            </tr>
-            <tr>
-                <th>Monday</th>
-                <td>10:00 AM - 12:00 PM</td>
-                <td>Outpatient 1</td>
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td>10:00 AM - 12:00 PM</td>
-                <td>Outpatient 2</td>
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td>10:00 AM - 12:00 PM</td>
-                <td>Outpatient 3</td>
-            </tr>
-            <tr>
-                <td>Thursday</td>
-                <td>10:00 AM - 12:00 PM</td>
-                <td>Outpatient 4</td>
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>10:00 AM - 12:00 PM</td>
-                <td>Outpatient 5</td>
-            </tr>
-        </table>
+        <div class="schedule-container">
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Town Campus (PCF Extension 1st Floor)</th>
+                    <th>Ranipet Campus (A0002, Basement, Rooms 27-32)</th>
+                    <th>Chittoor Campus</th>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>General OP (Full day)</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jewell Joseph</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jenifer Jeba S.</td>
+                    <td>General OP (Full day)</td>
+                    <td>General OP (Full day)</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>General OP (Afternoon)</td>
+                    <td>General OP (Afternoon)<br>Private OP: Dr. Jewell Joseph</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jewell Joseph</td>
+                    <td>General OP (Full day)</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jewell Joseph</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jenifer Jeba S.</td>
+                    <td>-</td>
+                </tr>
+            </table>
+        </div>
     </div>
     <div id="footernew"></div>
     <script>
