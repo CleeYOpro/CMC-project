@@ -15,37 +15,265 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .construction-message {
-            max-width: 1352px;
-            margin: 120px auto;
-            padding: 0 48px;
-            text-align: center;
-            color: #002855;
+        .main-donate-container {
+            max-width: 1250px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .construction-message h1 {
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding: 0 80px;
+        }
+
+        .hero-content {
+            display: flex;
+            gap: 30px;
+            max-height: 386px;
+        }
+
+        .hero-image {
+            flex: 0 0 501px;
+            max-width: 501px;
+            height: 386px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 386px;
+        }
+
+        .hero-text h1 {
+            color: #003087;
             font-family: 'Domine', serif;
-            font-size: 48px;
-            margin-bottom: 24px;
+            font-size: 4rem;
+            margin: 0;
+            line-height: 1.2;
         }
 
-        .construction-message p {
-            font-size: 20px;
+        .hero-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #000000;
+            font-weight: 500;
+            margin: 20px 0;
+        }
+
+        .main-donate-button {
+            background-color: #6089B7;
+            color: white;
+            text-decoration: none;
+            padding: 15px 0;
+            border-radius: 5px;
+            font-weight: 600;
+            text-align: center;
+            height: 48px;
+            width: 100%;
+            max-width: 600px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .main-donate-button:hover {
+            background-color: #003087;
+        }
+
+        .donation-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .donation-card {
+            max-width: 1120px;
+            height: 315px;
+            border: 4px solid #6089B7;
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .card-image {
+            flex: 0 0 477px;
+            max-width: 477px;
+            height: 315px;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-content h2 {
+            color: #003087;
+            font-family: 'Domine', serif;
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .card-content p {
+            font-size: 1rem;
             line-height: 1.5;
+            color: #000000;
+            font-weight: 500;
+            margin: 15px 0;
+        }
+
+        .price {
+            font-size: 1.4rem;
+
+            color: #003087;
+            margin-bottom: 15px;
+        }
+
+        .card-donate-button {
+            background-color: #6089B7;
+            color: white;
+            text-decoration: none;
+            width: 164px;
+            height: 56px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-donate-button:hover {
+            background-color: #003087;
+        }
+
+        .more-info {
+            text-align: center;
+            font-size: 1.4rem;
+            margin: 40px 0;
+        }
+
+        .more-info p {
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .more-info-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 20px;
+            border: 2px solid #003087;
+            color: #003087;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .more-info-button:hover {
+            background-color: #003087;
+            color: white;
+        }
+
+        .bible-quote {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
+
+        .bible-reference {
+            color: #003087;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-content {
+                max-height: none;
+            }
+
+            .hero-image {
+                flex: 0 0 400px;
+                max-width: 400px;
+                height: 308px;
+            }
+
+            .hero-text {
+                height: auto;
+            }
+
+            .donation-card {
+                height: auto;
+                min-height: 315px;
+            }
+
+            .card-image {
+                flex: 0 0 400px;
+                max-width: 400px;
+            }
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
-                padding: 0 24px;
+            .hero-content {
+                flex-direction: column;
+                max-height: none;
             }
 
-            .construction-message h1 {
-                font-size: 36px;
+            .hero-section {
+                padding: 0;
             }
 
-            .construction-message p {
-                font-size: 16px;
+            .hero-image {
+                flex: none;
+                max-width: 100%;
+                height: 300px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .donation-card {
+                flex-direction: column;
+            }
+
+            .card-image {
+                flex: none;
+                max-width: 100%;
+                height: 250px;
+            }
+
+            .card-content {
+                padding: 20px;
+            }
+
+            .card-content h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -53,42 +281,121 @@
 
 <body>
     <div id="navbar"></div>
+
+    <div class="main-donate-container">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="images/image.png" alt="CMC Vellore Palliative Care">
+                </div>
+                <div class="hero-text">
+                    <h1>Donate Today.<br>Touch Lives.</h1>
+                    <p>Donating to palliative care at CMC Vellore supports holistic care for patients with serious
+                        illnesses and helps their families by providing medical, emotional, and social support including
+                        essential life necessities, home care accessories, and livelihood opportunities. Contributions
+                        empower families to rebuild their lives with dignity and hope after losing a loved one.</p>
+                </div>
+            </div>
+            <a href="https://givecmc.org/palliative-care/" class="main-donate-button">Donate to Palliative Care</a>
+        </div>
+
+        <div class="donation-cards">
+            <div class="donation-card">
+                <div class="card-image">
+                    <img src="images/dagjadili.png" alt="Palliative Care Support">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h2>Give the Gift of Comfort and Care</h2>
+                        <p>Our Palliative Care team offers holistic support for patients and their families. Through
+                            World Hospice and Palliative Care Day, a gift of ₹20,000 can help care for a patient and
+                            support their loved ones.</p>
+                    </div>
+                    <div>
+                        <div class="price">₹20,000 For a bereaved family</div>
+                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Financial%20rehabilitation%22,%22AccountCode%22:%2222P296%22}}"
+                            class="card-donate-button">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <div class="card-image">
+                    <img src="images/image-3.png" alt="Family Support">
+                </div>
+                <div class="card-content">
+
+                    <div>
+                        <h2>Support a Month of Essential Medicines</h2>
+                        <p>Regular medication is essential for relieving difficult symptoms. With a gift of ₹3,000, you
+                            can support a patient's medication for one month, helping them receive continuous care at
+                            home. </p>
+                    </div>
+                    <div>
+                        <div class="price"><strong>₹3,000</strong> Support Medicines for One Month.</div>
+                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Medicines%20For%20A%20Month%22,%22EnterTheAmountinINR%22:%223000%22,%22AccountCode%22:%2222P292%22}}"
+                            class="card-donate-button">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <div class="card-image">
+                    <img src="images/image-2.png" alt="Patient Care">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h2>Give the Gift of Comfort and Care</h2>
+                        <p>A good mattress provides comfort and relief, reducing pain for patients in palliative care.
+                            It helps prevent bedsores, improves sleep quality, and enhances overall well-being, offering
+                            dignity and ease during challenging times.</p>
+                    </div>
+                    <div>
+                        <div class="price"><strong>₹700</strong> For one mattress.</div>
+                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%221%20Cotton%20Mattress%22,%22EnterTheAmountinINR%22:%22700%22,%22AccountCode%22:%2222P293%22}}" class="card-donate-button">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="donation-card">
+                <div class="card-image">
+                    <img src="images/image-1.png" alt="Community Support">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <h2>Give the Gift of Comfort and Care</h2>
+                        <p>CMC Vellore’s Palliative Medicine Department provides holistic support, addressing physical,
+                            emotional, social, and spiritual needs to enhance patients' quality of life. Their approach
+                            ensures compassionate care for daily needs and overall well-being.</p>
+                    </div>
+                    <div>
+                        <div class="price"><strong>₹12,000</strong> For groceries for one year.</div>
+                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Groceries%20for%20a%20year%22,%22EnterTheAmountinINR%22:%2212000%22,%22AccountCode%22:%2222P296%22}}" class="card-donate-button">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="more-info">
+            <p>For more information about donations,<br>visit CMC's official giving website.</p>
+            <a href="https://givecmc.org/palliative-care/" class="more-info-button">More Info <i class="fa-solid fa-chevron-right"
+                    style="margin-left: 10px;"></i></a>
+        </div>
+
+        <div class="bible-quote">
+            "...whatever you did for one of the least of these brothers and sisters of mine, you did for me."
+            <div class="bible-reference">Matthew 25:40, The Bible</div>
+        </div>
+    </div>
+
+    <div id="footernew"></div>
     <script>
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
-                initializeHamburgerMenu();
             });
 
-        function initializeHamburgerMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.navbar-links');
-            const body = document.body;
-
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                body.classList.toggle('menu-open');
-            });
-
-            document.querySelectorAll('.nav-item a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    body.classList.remove('menu-open');
-                });
-            });
-        }
-    </script>
-
-    <div class="construction-message">
-        <h1>DONATE BOY🤑🤑DONATE BOY</h1>
-        <p>PAGE UNDER CONSTRUCTION</p>
-    </div>
-
-    <div id="footernew"></div>
-    <script>
         fetch('footernew.html')
             .then(response => response.text())
             .then(data => {
