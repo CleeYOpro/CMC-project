@@ -292,7 +292,8 @@
             overflow: hidden;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             border: 2px solid #dddddd69;
         }
@@ -324,7 +325,8 @@
             border-bottom-right-radius: 10px;
         }
 
-        th:first-child, td:first-child {
+        th:first-child,
+        td:first-child {
             font-weight: bold;
         }
 
@@ -504,32 +506,50 @@
 <body>
     <div id="navbar"></div>
     <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-                initializeHamburgerMenu();
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
 
-        function initializeHamburgerMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.navbar-links');
-            const body = document.body;
+                    const hamburger = document.querySelector('.hamburger');
+                    const mobileMenu = document.querySelector('.mobile-menu');
+                    const closeMenu = document.querySelector('.close-menu');
+                    const dropdownTrigger = document.querySelector('.mobile-dropdown-trigger');
+                    const dropdown = document.querySelector('.mobile-dropdown');
 
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                body.classList.toggle('menu-open');
-            });
+                    hamburger.addEventListener('click', () => {
+                        mobileMenu.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
 
-            document.querySelectorAll('.nav-item a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    body.classList.remove('menu-open');
+                    closeMenu.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    });
+
+                    // Remove any existing click listener first
+                    dropdownTrigger.removeEventListener('click', toggleDropdown);
+
+                    // Define the toggle function
+                    function toggleDropdown() {
+                        console.log('Dropdown clicked'); // Debug log
+                        dropdown.classList.toggle('active');
+                        dropdownTrigger.classList.toggle('active');
+                    }
+
+                    // Add the click listener
+                    dropdownTrigger.addEventListener('click', toggleDropdown);
+
+                    // Close dropdown when clicking outside
+                    document.addEventListener('click', (e) => {
+                        if (!dropdownTrigger.contains(e.target) && !dropdown.contains(e.target)) {
+                            dropdown.classList.remove('active');
+                            dropdownTrigger.classList.remove('active');
+                        }
+                    });
                 });
-            });
-        }
+        });
     </script>
     <div class="container1">
         <div class="text-container">
