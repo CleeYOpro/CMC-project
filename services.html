@@ -367,38 +367,11 @@
             }
         }
     </style>
+    <script src="navbar.js"></script>
 </head>
 
 <body>
     <div id="navbar"></div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-                initializeHamburgerMenu();
-            });
-
-        function initializeHamburgerMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.navbar-links');
-            const body = document.body;
-
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                body.classList.toggle('menu-open');
-            });
-
-            document.querySelectorAll('.nav-item a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    body.classList.remove('menu-open');
-                });
-            });
-        }
-    </script>
 
     <div class="services-container">
         <h1 class="services-title">Services</h1>
@@ -683,13 +656,6 @@
     </div>
 
     <div id="footernew"></div>
-    <script>
-        fetch('footernew.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footernew').innerHTML = data;
-            });
-    </script>
 
     <script>
         // Update active nav item based on scroll position

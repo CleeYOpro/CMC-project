@@ -18,6 +18,8 @@
       justify-content: center;
       background-color: #002855;
       width: 100%;
+      position: relative;
+      z-index: 1000;
     }
 
     .navbar {
@@ -79,10 +81,12 @@
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       z-index: 1000;
+      list-style: none;
     }
 
     .dropdown-menu li {
       padding: 8px 16px;
+      list-style: none;
     }
 
     .nav-item.dropdown:hover .dropdown-menu {
@@ -96,10 +100,11 @@
     /* Hamburger styles */
     .hamburger {
       display: none;
-      cursor: pointer;
       background: none;
       border: none;
+      cursor: pointer;
       padding: 10px;
+      z-index: 1002;
     }
 
     .hamburger-icon {
@@ -269,21 +274,117 @@
       }
     }
 
+    /* Update mobile menu animation */
     .mobile-menu {
       position: fixed;
-      top: 0;
-      right: -100%;
+      top: -100%;
+      /* Start from above the viewport */
+      left: 0;
       width: 100%;
       height: 100vh;
       background-color: #002855;
-      transition: 0.3s;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
       flex-direction: column;
-      z-index: 1000;
+      z-index: 1001;
     }
 
     .mobile-menu.active {
-      right: 0;
+      top: 0;
+      /* Slide to top of viewport */
+    }
+
+    /* Add animations for menu items */
+    .mobile-menu-content ul li {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger animations for each menu item */
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(2) {
+      transition-delay: 0.3s;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(3) {
+      transition-delay: 0.4s;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(4) {
+      transition-delay: 0.5s;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(5) {
+      transition-delay: 0.6s;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(6) {
+      transition-delay: 0.7s;
+    }
+
+    .mobile-menu.active .mobile-menu-content ul li:nth-child(7) {
+      transition-delay: 0.8s;
+    }
+
+    /* Animate dropdown items */
+    .mobile-dropdown {
+      display: block;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease-in-out;
+      height: 0;
+      overflow: hidden;
+    }
+
+    .mobile-dropdown.active {
+      opacity: 1;
+      transform: translateY(0);
+      height: auto;
+    }
+
+    .mobile-dropdown ul li {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .mobile-dropdown.active ul li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stagger dropdown items */
+    .mobile-dropdown.active ul li:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    .mobile-dropdown.active ul li:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    .mobile-dropdown.active ul li:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+
+    .mobile-dropdown.active ul li:nth-child(4) {
+      transition-delay: 0.4s;
+    }
+
+    .mobile-dropdown.active ul li:nth-child(5) {
+      transition-delay: 0.5s;
+    }
+
+    .mobile-dropdown.active ul li:nth-child(6) {
+      transition-delay: 0.6s;
     }
 
     .mobile-menu-header {
@@ -383,6 +484,10 @@
         display: block;
       }
     }
+
+    .mobile-menu.active~.navbar-container {
+      visibility: hidden;
+    }
   </style>
 </head>
 
@@ -397,12 +502,11 @@
       </button>
       <ul class="navbar-links">
         <li class="nav-item"><a href="index.html">Home</a></li>
-        <li class="nav-item"><a href="aboutus.html">About</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
         <li class="nav-item"><a href="faculty.html">Faculty</a></li>
         <li class="nav-item"><a href="services.html">Services</a></li>
-        <li class="nav-item"><a href="Training.html">Training</a></li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-        <!-- Desktop dropdown -->
+        <li class="nav-item"><a href="training.html">Training</a></li>
+
         <li class="nav-item dropdown">
           <a href="#" class="dropdown-toggle">Resources <span class="dropdown-icon">▼</span></a>
           <ul class="dropdown-menu">
@@ -414,6 +518,8 @@
             <li><a href="links.html">External Links</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
+        <li class="nav-item"><a href="donate.html">Donate</a></li>
       </ul>
     </nav>
   </div>
@@ -446,48 +552,6 @@
       </ul>
     </div>
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const hamburger = document.querySelector('.hamburger');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      const closeMenu = document.querySelector('.close-menu');
-      const dropdownTrigger = document.querySelector('.mobile-dropdown-trigger');
-      const dropdown = document.querySelector('.mobile-dropdown');
-      const navbarLinks = document.querySelector(".navbar-links");
-
-      hamburger.addEventListener('click', () => {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-
-      closeMenu.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      });
-
-      // Remove any existing click listener first
-      dropdownTrigger.removeEventListener('click', toggleDropdown);
-
-      // Define the toggle function
-      function toggleDropdown() {
-        console.log('Dropdown clicked'); // Debug log
-        dropdown.classList.toggle('active');
-        dropdownTrigger.classList.toggle('active');
-      }
-
-      // Add the click listener
-      dropdownTrigger.addEventListener('click', toggleDropdown);
-
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!dropdownTrigger.contains(e.target) && !dropdown.contains(e.target)) {
-          dropdown.classList.remove('active');
-          dropdownTrigger.classList.remove('active');
-        }
-      });
-    });
-  </script>
 </body>
 
 </html>

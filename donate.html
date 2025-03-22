@@ -277,6 +277,7 @@
             }
         }
     </style>
+    <script src="navbar.js"></script>
 </head>
 
 <body>
@@ -352,7 +353,8 @@
                     </div>
                     <div>
                         <div class="price"><strong>₹700</strong> For one mattress.</div>
-                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%221%20Cotton%20Mattress%22,%22EnterTheAmountinINR%22:%22700%22,%22AccountCode%22:%2222P293%22}}" class="card-donate-button">Donate</a>
+                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%221%20Cotton%20Mattress%22,%22EnterTheAmountinINR%22:%22700%22,%22AccountCode%22:%2222P293%22}}"
+                            class="card-donate-button">Donate</a>
                     </div>
                 </div>
             </div>
@@ -364,13 +366,14 @@
                 <div class="card-content">
                     <div>
                         <h2>Give the Gift of Comfort and Care</h2>
-                        <p>CMC Vellore’s Palliative Medicine Department provides holistic support, addressing physical,
+                        <p>CMC Vellore's Palliative Medicine Department provides holistic support, addressing physical,
                             emotional, social, and spiritual needs to enhance patients' quality of life. Their approach
                             ensures compassionate care for daily needs and overall well-being.</p>
                     </div>
                     <div>
                         <div class="price"><strong>₹12,000</strong> For groceries for one year.</div>
-                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Groceries%20for%20a%20year%22,%22EnterTheAmountinINR%22:%2212000%22,%22AccountCode%22:%2222P296%22}}" class="card-donate-button">Donate</a>
+                        <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Groceries%20for%20a%20year%22,%22EnterTheAmountinINR%22:%2212000%22,%22AccountCode%22:%2222P296%22}}"
+                            class="card-donate-button">Donate</a>
                     </div>
                 </div>
             </div>
@@ -378,8 +381,8 @@
 
         <div class="more-info">
             <p>For more information about donations,<br>visit CMC's official giving website.</p>
-            <a href="https://givecmc.org/palliative-care/" class="more-info-button">More Info <i class="fa-solid fa-chevron-right"
-                    style="margin-left: 10px;"></i></a>
+            <a href="https://givecmc.org/palliative-care/" class="more-info-button">More Info <i
+                    class="fa-solid fa-chevron-right" style="margin-left: 10px;"></i></a>
         </div>
 
         <div class="bible-quote">
@@ -389,19 +392,6 @@
     </div>
 
     <div id="footernew"></div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
-
-        fetch('footernew.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footernew').innerHTML = data;
-            });
-    </script>
 </body>
 
 </html>
