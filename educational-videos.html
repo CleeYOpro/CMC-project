@@ -135,6 +135,13 @@
     </div>
 
     <div id="footernew"></div>
+    <script>
+        fetch('footernew.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footernew').innerHTML = data;
+            });
+    </script>
 </body>
 
 </html>
