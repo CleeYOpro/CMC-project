@@ -266,6 +266,106 @@
                 font-size: 18px;
             }
         }
+
+        .services-intro-card {
+            background: #c4dcf5;
+            border: 1px solid #99c7f8;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 48px;
+            max-width: 1120px;
+            margin: 0 auto 48px;
+        }
+
+        .services-intro-text {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #002855;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .services-intro-card {
+                padding: 24px;
+                margin-bottom: 32px;
+            }
+
+            .services-intro-text {
+                font-size: 16px;
+            }
+        }
+
+        .outpatient-table-container {
+            background: #c4dcf5;
+            border: 1px solid #99c7f8;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 24px;
+            overflow-x: auto;
+            max-width: 1060px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 24px;
+        }
+
+        .outpatient-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .outpatient-table th,
+        .outpatient-table td {
+            padding: 16px;
+            text-align: left;
+            border: 1px solid #99c7f8;
+        }
+
+        .outpatient-table th {
+            background: #002855;
+            color: white;
+            font-weight: 600;
+        }
+
+        .outpatient-table td {
+            color: #002855;
+        }
+
+        .outpatient-table .address {
+            font-weight: 500;
+        }
+
+        .outpatient-table a {
+            color: #6089B7;
+            text-decoration: none;
+        }
+
+        .outpatient-table a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1200px) {
+            .outpatient-table-container {
+                max-width: 100%;
+                margin: 24px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .outpatient-table-container {
+                padding: 16px;
+                margin-top: 16px;
+            }
+
+            .outpatient-table th,
+            .outpatient-table td {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 
@@ -303,6 +403,20 @@
     <div class="services-container">
         <h1 class="services-title">Services</h1>
 
+        <div class="services-intro-card">
+            <p class="services-intro-text">
+                The Department of Palliative medicine provides outpatient, inpatient and domiciliary services for
+                patients with
+                chronic progressive life-limiting and life-threatening illnesses. Inpatient services include admissions
+                under
+                Palliative Medicine and consultation services for referrals from other departments. The department also
+                provides
+                hospice care for eligible patients at the Ida. B Scudder hospice. Palliative care services are provided
+                by an
+                interdisciplinary team consisting of doctors, nurses, social workers, psychologist and chaplain.
+            </p>
+        </div>
+
         <div class="services-nav">
             <a href="#outpatient" class="service-nav-item">Outpatient</a>
             <a href="#inpatient" class="service-nav-item">Inpatient</a>
@@ -314,6 +428,7 @@
             <a href="#hospice" class="service-nav-item">Hospice</a>
             <a href="#bereavement" class="service-nav-item">Bereavement</a>
             <a href="#spiritual-support" class="service-nav-item">Spiritual Support</a>
+            <a href="#teleconsultation" class="service-nav-item">Teleconsultation</a>
         </div>
 
         <div class="service-cards">
@@ -325,13 +440,75 @@
                 <div class="service-content">
                     <h2 class="service-title">Outpatient Services</h2>
                     <p class="service-description">
-                        Our outpatient clinic is run by a multidisciplinary team consisting of doctors, nurses, social
-                        worker, psychologist and chaplain. We provide active symptom management and supportive care to
-                        patients at various stages of life at palliative care clinic. Follow up is ensured by systematic
-                        appointment at regular intervals. We aim to improve quality of life and relieve suffering.
+                        Department of Palliative Medicine provides outpatient services in CMC Town campus, Ranipet
+                        campus and Chittoor campus.Our outpatient clinic is run by a multidisciplinary team consisting
+                        of doctors, nurses, social worker, psychologist and chaplain. We provide active symptom
+                        management and supportive care to patients at various stages of life at palliative care clinic.
+                        Follow up is ensured by systematic appointment at regular intervals. We aim to improve quality
+                        of life and relieve suffering.
                         Regular follow-up is ensured.
                     </p>
                 </div>
+            </div>
+            <div class="outpatient-table-container">
+                <table class="outpatient-table">
+                    <tr>
+                        <th>Day</th>
+                        <th>Town Campus (PCF Extension 1st Floor)</th>
+                        <th>Ranipet Campus (A0002, Basement, Rooms 27-32)</th>
+                        <th>Chittoor Campus (North OPD, Room 15)</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <strong>Address:</strong> Christian Medical College Vellore, Ida Scudder Road,
+                            Vellore-632004<br>
+                            <strong>Map:</strong> <a href="https://shorturl.at/44igJ"
+                                target="_blank">https://shorturl.at/44igJ</a>
+                        </td>
+                        <td>
+                            <strong>Address:</strong> Christian Medical College Ranipet Campus, Kilminnal-632517<br>
+                            <strong>Map:</strong> <a href="https://shorturl.at/ASCAS"
+                                target="_blank">https://shorturl.at/ASCAS</a>
+                        </td>
+                        <td>
+                            <strong>Address:</strong> CMC Vellore Chittoor Campus, 190 Ramapuram Village, 189 Kothapalle
+                            Post, Gudipala Mandal, Chittoor-517132<br>
+                            <strong>Map:</strong> <a href="https://shorturl.at/SwPKE"
+                                target="_blank">https://shorturl.at/SwPKE</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>General (Full day)<br>Private: Dr. Jyothsna Kuriakose</td>
+                        <td>General (Full day)<br>Private: Dr. Jewell Joseph</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>General (Full day)<br>Private: Dr. Jenifer Jeba S</td>
+                        <td>General (Full day)<br>Private: Dr. Jyothsna Kuriakose</td>
+                        <td>General (Full day)</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>General (Afternoon)</td>
+                        <td>General (Afternoon)<br>Private: Dr. Jewell Joseph</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>General (Full day)<br>Private: Dr. Jewell Joseph</td>
+                        <td>General (Full day)</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>General (Full day)<br>Private: Dr. Jewell Joseph</td>
+                        <td>General (Full day)<br>Private: Dr. Jenifer Jeba S</td>
+                        <td>-</td>
+                    </tr>
+                </table>
             </div>
 
             <!-- Inpatient Services -->
@@ -342,11 +519,10 @@
                 <div class="service-content">
                     <h2 class="service-title">Inpatient Services</h2>
                     <p class="service-description">
-                        Patients are admitted to palliative care ward for purpose of symptom control, nursing care,
-                        terminal care. We also have 6 or 8 palliative caregivers trained by our department who help in
-                        patient care. The team consisting of doctor, nurse, chaplain, social worker and psychologist,
-                        conducts a comprehensive and detailed bedside round of the morning and evening to each
-                        in-patient. Our ward is equipped with all necessary facilities.
+                        Inpatient care is provided for patients admitted for symptom control, end-of-life care, nursing
+                        care and any palliative interventions. We also teach and empower caregivers in the provision of
+                        care at home. The specialist palliative care team also provides inpatient consultation services
+                        for patients admitted under other departments.
                     </p>
                 </div>
             </div>
@@ -423,9 +599,9 @@
                 <div class="service-content">
                     <h2 class="service-title">Domiciliary Services</h2>
                     <p class="service-description">
-                        The Department of Palliative Medicine runs a comprehensive home care service for patients who
-                        are unable to come to the hospital. The team consisting of specialized home care nurses and
-                        conducted after triaging priority for the patients.<br><strong>Team visit: </strong>A team
+                        Patients seen by the specialist palliative care team living within 40- 50 kilometres from the
+                        hospital are visited by the team at home on specified days of the week.<br><strong>Team visit:
+                        </strong>A team
                         consisting of specialist palliative care physician, nurse, social worker and chaplain
                         visits homes of patients who are unable to come to the hospital. The key goals are to reduce
                         suffering, and provide ongoing care wherever possible (pain & nursing care, spiritual
@@ -447,9 +623,10 @@
                 <div class="service-content">
                     <h2 class="service-title">Hospice</h2>
                     <p class="service-description">
-                        The Department runs a 15-bedded hospice situated 5 km away from the hospital. This is a place of
-                        comfort and care for patients who are unable to continue care at hospital or home for various
-                        reasons. This is primarily a life-care bed facility for terminally ill patients.
+                        Ida B. Scudder Hospice, a 15-bed facility co-managed by CMC Vellore and the Sneha Deepam
+                        Society, a charitable organization, provides compassionate and comprehensive care for patients
+                        with life-threatening illnesses. Its services include symptom management, respite care, nursing
+                        care, and end-of-life care, with a focus on preserving dignity in both life and death.
                     </p>
                 </div>
             </div>
@@ -484,7 +661,25 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Teleconsultation Services -->
+            <div class="service-card" id="teleconsultation">
+                <div class="service-image">
+                    <img src="Images/tele.png" alt="Teleconsultation Services">
+                </div>
+                <div class="service-content">
+                    <h2 class="service-title">Teleconsultation Services</h2>
+                    <p class="service-description">
+                        Teleconsultation services are offered for both new and returning patients, ensuring accessible,
+                        timely, and
+                        high-quality medical care while adhering to institutional guidelines for safety, efficiency, and
+                        patient-centered support.
+                    </p>
+                </div>
+            </div>
         </div>
+
+
     </div>
 
     <div id="footernew"></div>
