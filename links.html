@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Patient Stories - Department of Palliative Medicine</title>
+    <title>External Links - Department of Palliative Medicine</title>
     <style>
         body {
             margin: 0;
@@ -15,86 +15,150 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .construction-message {
+        .links-container {
             max-width: 1352px;
-            margin: 120px auto;
-            padding: 0 48px;
-            text-align: center;
-            color: #002855;
+            margin: 80px auto;
+            padding: 0 32px;
         }
 
-        .construction-message h1 {
+        .links-title {
             font-family: 'Domine', serif;
-            font-size: 48px;
+            font-size: 72px;
+            color: #002855;
+            text-align: center;
             margin-bottom: 24px;
         }
 
-        .construction-message p {
+        .links-description {
             font-size: 20px;
             line-height: 1.5;
+            text-align: center;
+            color: #002855;
+            max-width: 800px;
+            margin: 0 auto 48px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .link-card {
+            background: #c4dcf5;
+            border: 1px solid #99c7f8;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .link-card h2 {
+            font-family: 'Domine', serif;
+            font-size: 24px;
+            color: #002855;
+            margin: 0;
+        }
+
+        .link-card p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #002855;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .link-card a {
+            color: #6089B7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-block;
+            padding: 8px 24px;
+            border: 2px solid #6089B7;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .link-card a:hover {
+            background-color: #6089B7;
+            color: white;
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
-                padding: 0 24px;
+            .links-container {
+                margin: 40px auto;
+                padding: 0 20px;
             }
 
-            .construction-message h1 {
-                font-size: 36px;
+            .links-title {
+                font-size: 48px;
+                margin-bottom: 16px;
             }
 
-            .construction-message p {
+            .links-description {
                 font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .link-card {
+                padding: 24px;
             }
         }
     </style>
+    <script src="navbar.js"></script>
 </head>
 
 <body>
     <div id="navbar"></div>
-    <script>
-        fetch('navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-                initializeHamburgerMenu();
-            });
 
-        function initializeHamburgerMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const navLinks = document.querySelector('.navbar-links');
-            const body = document.body;
+    <div class="links-container">
+        <h1 class="links-title">Useful Links</h1>
+        <p class="links-description">
+            Explore these valuable resources to learn more about palliative care and related services.
+        </p>
 
-            hamburger.addEventListener('click', () => {
-                hamburger.classList.toggle('active');
-                navLinks.classList.toggle('active');
-                body.classList.toggle('menu-open');
-            });
+        <div class="links-grid">
+            <div class="link-card">
+                <h2>CMC Vellore – Palliative Medicine</h2>
+                <p>Visit the official CMC Vellore Palliative Medicine department page for comprehensive information
+                    about our services, team, and initiatives.</p>
+                <a href="https://www.cmch-vellore.edu/palliative-medicine/" target="_blank">Visit Website →</a>
+            </div>
 
-            document.querySelectorAll('.nav-item a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                    body.classList.remove('menu-open');
-                });
-            });
-        }
-    </script>
+            <div class="link-card">
+                <h2>Palliative Care Directory of India</h2>
+                <p>Access a comprehensive directory of palliative care services and providers across India to find
+                    support near you.</p>
+                <a href="https://www.palliativecare.in/palliative-care-directory-of-india/" target="_blank">Visit
+                    Directory →</a>
+            </div>
 
-    <div class="construction-message">
-        <h1>Page Under Construction</h1>
-        <p>We're working hard to bring you the best content. Please check back soon!</p>
+            <div class="link-card">
+                <h2>Indian Association of Palliative Care</h2>
+                <p>Learn about the national organization dedicated to promoting and supporting palliative care services
+                    in India.</p>
+                <a href="https://www.palliativecare.in/" target="_blank">Learn More →</a>
+            </div>
+
+            <div class="link-card">
+                <h2>Pallium India</h2>
+                <p>Explore resources and initiatives from one of India's leading organizations in palliative care
+                    advocacy and education.</p>
+                <a href="https://palliumindia.org/" target="_blank">Visit Website →</a>
+            </div>
+        </div>
     </div>
 
     <div id="footernew"></div>
-    <script>
-        fetch('footernew.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footernew').innerHTML = data;
-            });
-    </script>
 </body>
 
 </html>

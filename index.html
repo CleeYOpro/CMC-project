@@ -558,9 +558,6 @@
                 <div class="slide">Palliative care nurse dresses a wound during a home visit.</div>
             </div>
             <div class="controls">
-                <div class="progress-container">
-                    <div class="progress-bar"></div>
-                </div>
                 <div class="arrows">
                     <i class="fa-solid fa-square-caret-left" style="color: #6089B7;" onclick="changeSlide(-1)"></i>
                     <i class="fa-solid fa-square-caret-right" style="color: #6089B7;" onclick="changeSlide(1)"></i>
@@ -686,7 +683,6 @@
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const images = document.querySelectorAll('.image-box img');
-        const progressBar = document.querySelector('.progress-bar');
         let slideInterval;
 
         function showSlide(index) {
@@ -695,18 +691,9 @@
 
             slides[index].classList.add('active');
             images[index].classList.add('active');
-
-            // Reset and start progress bar
-            progressBar.style.width = '0%';
-            void progressBar.offsetWidth; // Force reflow
-            progressBar.style.width = '100%';
         }
 
         function changeSlide(direction) {
-            // Reset progress bar transition
-            progressBar.style.transition = 'none';
-            progressBar.style.width = '0%';
-
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
             showSlide(currentSlide);
 
@@ -720,28 +707,14 @@
         }
 
         function startSlideShow() {
-            // Reset progress bar
-            progressBar.style.transition = 'width 3s linear';
-            progressBar.style.width = '100%';
-
             slideInterval = setInterval(autoSlide, 3000);
         }
 
         function pauseSlideShow() {
             clearInterval(slideInterval);
-            // Pause progress bar
-            const width = progressBar.offsetWidth;
-            progressBar.style.transition = 'none';
-            progressBar.style.width = width + 'px';
         }
 
         function resumeSlideShow() {
-            const remainingWidth = (1 - progressBar.offsetWidth / progressBar.parentElement.offsetWidth) * 100;
-            const remainingTime = (remainingWidth / 100) * 3000;
-
-            progressBar.style.transition = `width ${remainingTime}ms linear`;
-            progressBar.style.width = '100%';
-
             slideInterval = setInterval(autoSlide, 3000);
         }
 

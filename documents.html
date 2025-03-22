@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-    <title>Patient Stories - Department of Palliative Medicine</title>
+    <title>Documents - Department of Palliative Medicine</title>
     <style>
         body {
             margin: 0;
@@ -15,37 +15,110 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .construction-message {
+        .documents-container {
             max-width: 1352px;
-            margin: 120px auto;
-            padding: 0 48px;
-            text-align: center;
-            color: #002855;
+            margin: 80px auto;
+            padding: 0 32px;
         }
 
-        .construction-message h1 {
+        .documents-title {
             font-family: 'Domine', serif;
-            font-size: 48px;
+            font-size: 72px;
+            color: #002855;
+            text-align: center;
             margin-bottom: 24px;
         }
 
-        .construction-message p {
+        .documents-description {
             font-size: 20px;
             line-height: 1.5;
+            text-align: center;
+            color: #002855;
+            max-width: 800px;
+            margin: 0 auto 48px;
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+
+        .document-card {
+            background: #c4dcf5;
+            border: 1px solid #99c7f8;
+            border-radius: 16px;
+            padding: 32px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 24px;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pdf-icon {
+            color: #002855;
+            font-size: 48px;
+        }
+
+        .document-card h2 {
+            font-family: 'Domine', serif;
+            font-size: 24px;
+            color: #002855;
+            margin: 0;
+        }
+
+        .document-card p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #002855;
+            margin: 0;
+            flex-grow: 1;
+        }
+
+        .document-card a {
+            color: #6089B7;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: 2px solid #6089B7;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .document-card a:hover {
+            background-color: #6089B7;
+            color: white;
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
-                padding: 0 24px;
+            .documents-container {
+                margin: 40px auto;
+                padding: 0 20px;
             }
 
-            .construction-message h1 {
-                font-size: 36px;
+            .documents-title {
+                font-size: 48px;
+                margin-bottom: 16px;
             }
 
-            .construction-message p {
+            .documents-description {
                 font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .document-card {
+                padding: 24px;
             }
         }
     </style>
@@ -55,9 +128,26 @@
 <body>
     <div id="navbar"></div>
 
-    <div class="construction-message">
-        <h1>Page Under Construction</h1>
-        <p>We're working hard to bring you the best content. Please check back soon!</p>
+    <div class="documents-container">
+        <h1 class="documents-title">Documents</h1>
+        <p class="documents-description">
+            Access important documents and resources from the Department of Palliative Medicine.
+        </p>
+
+        <div class="documents-grid">
+            <div class="document-card">
+                <i class="fas fa-file-pdf pdf-icon"></i>
+                <h2>Department Brochure</h2>
+                <p>Download our comprehensive brochure to learn more about our services, team, and approach to
+                    palliative care.</p>
+                <a href="Department of Palliative Medicine - Brochure.pdf" target="_blank">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </a>
+            </div>
+
+            <!-- Add more document cards here as needed -->
+        </div>
     </div>
 
     <div id="footernew"></div>
