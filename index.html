@@ -686,50 +686,54 @@
         let slideInterval;
 
         function showSlide(index) {
+            // Remove active class from all slides and images
             slides.forEach(slide => slide.classList.remove('active'));
             images.forEach(image => image.classList.remove('active'));
 
-            slides[index].classList.add('active');
-            images[index].classList.add('active');
+            // Add active class to current slide and image
+            currentSlide = index;
+            slides[currentSlide].classList.add('active');
+            images[currentSlide].classList.add('active');
         }
 
         function changeSlide(direction) {
+            // Calculate new slide index
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
             showSlide(currentSlide);
-
-            // Reset timer
-            clearInterval(slideInterval);
-            startSlideShow();
-        }
-
-        function autoSlide() {
-            changeSlide(1);
         }
 
         function startSlideShow() {
-            slideInterval = setInterval(autoSlide, 3000);
+            // Clear any existing interval first
+            if (slideInterval) {
+                clearInterval(slideInterval);
+            }
+            // Set new interval
+            slideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 3000);
         }
 
-        function pauseSlideShow() {
-            clearInterval(slideInterval);
-        }
-
-        function resumeSlideShow() {
-            slideInterval = setInterval(autoSlide, 3000);
-        }
-
-        // Add event listeners
-        document.querySelector('.container1').addEventListener('mouseenter', pauseSlideShow);
-        document.querySelector('.container1').addEventListener('mouseleave', resumeSlideShow);
-
+        // Event listeners for manual controls
         document.querySelectorAll('.controls i').forEach(control => {
-            control.addEventListener('click', () => {
-                pauseSlideShow();
-                setTimeout(startSlideShow, 3000);
+            control.addEventListener('click', (e) => {
+                const direction = e.target.classList.contains('fa-square-caret-right') ? 1 : -1;
+                changeSlide(direction);
+                // Restart the slideshow timer
+                startSlideShow();
             });
         });
 
-        // Initialize
+        // Pause on hover
+        document.querySelector('.container1').addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+
+        // Resume on mouse leave
+        document.querySelector('.container1').addEventListener('mouseleave', () => {
+            startSlideShow();
+        });
+
+        // Initialize the slideshow
         showSlide(0);
         startSlideShow();
     </script>
