@@ -13,39 +13,147 @@
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .construction-message {
-            max-width: 1352px;
-            margin: 120px auto;
-            padding: 0 48px;
+        .stories-container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .page-title {
             text-align: center;
             color: #002855;
+            margin-bottom: 50px;
         }
 
-        .construction-message h1 {
+        .page-title h1 {
             font-family: 'Domine', serif;
-            font-size: 48px;
-            margin-bottom: 24px;
+            font-size: 3.4em;
+            margin-bottom: 20px;
         }
 
-        .construction-message p {
-            font-size: 20px;
-            line-height: 1.5;
+        .story-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        .story-header {
+            margin-bottom: 10px;
+        }
+
+        .story-title {
+            font-family: 'Domine', serif;
+            color: #002855;
+            font-size: 2.3em;
+            margin-bottom: 15px;
+            text-align: center;
+
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .story-images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .story-image {
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .story-image.full-width {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+
+        .story-image.side-image {
+            float: right;
+            width: 45%;
+            margin: 0 0 1rem 2rem;
+        }
+
+        .story-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .donation-section {
+            text-align: center;
+            max-width: 800px;
+            margin: auto auto;
+
+        }
+
+        .donation-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #fff;
+            background-color: #002855;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .donate-button:hover {
+            background-color: #6089B7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         @media (max-width: 768px) {
-            .construction-message {
-                margin: 80px auto;
-                padding: 0 24px;
+            .story-image.side-image {
+                float: none;
+                width: 100%;
+                margin: 2rem 0;
             }
 
-            .construction-message h1 {
-                font-size: 36px;
+            .stories-container {
+                margin: 30px auto;
             }
 
-            .construction-message p {
-                font-size: 16px;
+            .story-card {
+                padding: 20px;
             }
         }
     </style>
@@ -55,9 +163,134 @@
 <body>
     <div id="navbar"></div>
 
-    <div class="construction-message">
-        <h1>Page Under Construction</h1>
-        <p>We're working hard to bring you the best content. Please check back soon!</p>
+    <div class="stories-container">
+        <div class="page-title">
+            <h1>Patient Stories</h1>
+            <p>Stories of hope, dignity, and compassionate care from our community</p>
+        </div>
+
+        <article class="story-card">
+            <header class="story-header">
+                <h2 class="story-title">From Isolation to Sanctuary:<br>A Hospice of Hope</h2>
+            </header>
+
+            <div class="story-content">
+                <div class="story-text">
+                    <p>The 15-bed Ida B. Scudder Hospice in Snehadeepam cares for terminally ill and marginalised
+                        patients. Kamu* shuffled into the Palliative Medicine outpatient clinic one afternoon. The
+                        weight of 88 years hunched his shoulders, and the tell-tale deformities in his hands and feet
+                        spoke of a past battle with leprosy. A recent diagnosis – a probable malignancy gnawing at his
+                        insides – was another cruel twist of fate in the twilight years of his life.</p>
+
+                    <p>Pain, a relentless throb in his limbs, and the indignity of leaking bowels were his primary
+                        concerns. The scars etched in his life by the contempt of his own kin who refused to touch him
+                        were so profound he even refused a detailed clinical examination by the doctor. He clutched a
+                        solitary hundred-rupee note – merely enough for the journey back and his dinner for the day. Our
+                        team offered him free medication and diapers. Yet, he refused the diapers. "These hands," he
+                        rasped, his voice rough with disuse, "cannot hold anything anymore."</p>
+
+                    <figure class="story-image full-width">
+                        <img src="Images/image 16.png"
+                            alt="Healthcare team gathered around a patient's bed at Ida B. Scudder Hospice"
+                            class="story-img">
+                    </figure>
+
+                    <p>Overwhelmed by his predicament, we decided to act. We found he lived in a desolate bus shelter
+                        with flies buzzing around him. We got in touch with his only contactable relative and brought
+                        Kamu to the hospital to manage his symptoms. It was then that a beacon of hope emerged – the
+                        reopening of the hospice on the Snehadeepam campus.</p>
+
+                    <figure class="story-image side-image">
+                        <img src="Images/image-1 1.png" alt="Healthcare provider caring for a patient"
+                            class="story-img">
+                    </figure>
+
+                    <p>Kamu was the first patient admitted in 2024 to the recently dedicated Ida B Scudder Hospice. The
+                        hospice is a haven. More than just food, shelter, and clean clothes, it is the caring touch,
+                        gentle and unhurried, on his calloused figure. Kamu joined the staff in prayers, tears of
+                        gratitude glistening in his eyes. "I found God here," he whispered, his voice thick with
+                        emotion. He lived with dignity, his choices – be it food or conversation – respected. For about
+                        two months, he was free from suffering, a weight finally lifted from his weary shoulders.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="story-card">
+            <header class="story-header">
+                <h2 class="story-title">Healing Hearts and Communities</h2>
+            </header>
+
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Kala* lives in Vellore District with her three energetic boys. Last year, her 29-year old
+                        husband, a daily wage labourer, was diagnosed with terminal cancer. CMC's Department of
+                        Palliative Medicine looked after him, subsidising his care and medications. Kala was
+                        inconsolable when he passed away. She herself suffers from a seizure disorder. How would she
+                        support her children, look after her own health needs and repay loans her husband had taken?</p>
+
+                    <figure class="story-image full-width">
+                        <img src="Images/image 17.png"
+                            alt="Kala standing with her three children and cattle in front of their home"
+                            class="story-img">
+                        <figcaption class="image-caption">Kala and her family pictured above.</figcaption>
+                    </figure>
+
+                    <p>She moved forward bravely, selling their house and moving to her parents' home. "I do not want to
+                        be an additional burden," Kala decided, "I will find work and support my children". Our
+                        Palliative Care team spent time engaging with Kala to find a livelihood option to suit her
+                        skills and help her become financially independent.</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="story-card">
+            <header class="story-header">
+                <h2 class="story-title">Healing, One stitch at a time</h2>
+            </header>
+
+            <div class="story-content">
+                <div class="story-text">
+                    <p>It was October 2020. Time was ticking fast for Suji*. Her husband was diagnosed with cancer in
+                        his mouth. For almost a year he was taken care by the Palliative Care Team at CMC Vellore. She
+                        knew by now her husband's days were numbered. Suji was only 37 years old. All her married life
+                        she and her four-year-old daughter depended on him. In spite of the uncertainty ahead, her
+                        priority at the time was to care for her dying husband. Before he passed away, he was full of
+                        regret that he could not provide enough for their little girl.</p>
+
+                    <p>The Palliative Care team knew Suji needed encouragement and resources to help her move on.
+                        Knowing she had done a few courses on tailoring and embroidery a long time ago, they offered her
+                        a sewing machine. Her passion was sparked to life as she began stitching clothes for her
+                        daughter and herself with some old sarees. Word got around and women in her neighborhood wanted
+                        her to stitch clothes for them too.</p>
+
+                    <figure class="story-image side-image">
+                        <img src="Images/Suji-threading-a-needle 1.png" alt="Suji working at her sewing machine"
+                            class="story-img">
+                    </figure>
+
+                    <p>Suji says with gratitude, "People are surprised when they hear my story. They ask me, did CMC
+                        really give you this sewing machine? Aren't they a hospital? I tell them yes, they are! They not
+                        only helped when my husband was ill, they also helped me have hope in life."If you meet Suji,
+                        her eyes do not only tell the story of her pain but hope for the future.</p>
+
+                    <figure class="story-image full-width">
+                        <img src="Images/Suji-and-daughter 1.png"
+                            alt="Suji with her daughter next to her sewing machine" class="story-img">
+                    </figure>
+
+                    <p>Today, along with stitching clothes she is trying to secure a commercial order. In the meantime
+                        she has worked under other tailors to learn and upgrade her skills. In the future she would like
+                        to have her own tailoring shop.</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="donation-section">
+            <p class="donation-text">A donation can bring hope and dignity to a patient in need, supporting holistic
+                care for both them and their families.<br>Help us make a difference for those like Kala and Suji by
+                contributing today.</p>
+            <a href="donate.html" class="donate-button">Donate Now</a>
+        </div>
     </div>
 
     <div id="footernew"></div>
