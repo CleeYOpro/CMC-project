@@ -500,6 +500,164 @@
             transition: width 3s linear;
             border-radius: 2px;
         }
+
+        .testimonials-section {
+            max-width: 1352px;
+            margin: 60px auto;
+            padding: 0 32px 32px;
+            position: relative;
+        }
+
+        .testimonials-section::before,
+        .testimonials-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .testimonials-section::before {
+            left: 0;
+            background: linear-gradient(to right, white 0%, rgba(47, 55, 85, 0) 110%);
+        }
+
+        .testimonials-section::after {
+            right: 0;
+            background: linear-gradient(to left, white 0%, rgba(47, 55, 85, 0) 110%);
+        }
+
+        .testimonials-container {
+            display: flex;
+            overflow: hidden;
+            gap: 24px;
+            position: relative;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 24px;
+            animation: scroll 15s linear infinite;
+        }
+
+        .testimonial-slide {
+            flex: 0 0 auto;
+            width: 300px;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            margin: 0 10px;
+            display: flex;
+        }
+
+        .testimonial-box {
+            background-color: #f8f9fa;
+            border-radius: 16px;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+            border: 4px solid #77899d;
+        }
+
+        .testimonial-text {
+            font-family: 'Domine', serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #000f21;
+
+            margin-bottom: 16px;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            color: #77899d;
+            font-style: italic;
+            padding-bottom: 8px;
+            margin-top: auto;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #6089B7;
+        }
+
+        @media (max-width: 768px) {
+            .testimonial-slide {
+                width: 250px;
+                margin: 0 16px;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-slide {
+                width: 200px;
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .testimonials-track:hover {
+            animation-play-state: paused;
+        }
+
+        .quote-icon {
+            color: #6089B7;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .testimonials-heading {
+            font-family: 'Domine', serif;
+            font-size: 60px;
+            color: #002855;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-heading {
+                font-size: 36px;
+                margin-bottom: 24px;
+            }
+        }
     </style>
 </head>
 
@@ -671,6 +829,89 @@
             </table>
         </div>
     </div>
+    <div class="testimonials-section">
+        <h2 class="testimonials-heading">Hear From Those We've Helped</h2>
+        <div class="testimonials-container">
+            <div class="testimonials-track">
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"No one had told me all this while that something can be done for
+                            relieving my pain. Thank you for relieving my pain and suffering."</p>
+                        <p class="testimonial-author">- A patient with stage 4 cancer of pancreas</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Can't imagine my mother having a good quality of life without this
+                            team's immense support"</p>
+                        <p class="testimonial-author">- Son of a patient in hospice</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"example example"</p>
+                        <p class="testimonial-author">- somebody</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"example example"</p>
+                        <p class="testimonial-author">- somebody</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"No one had told me all this while that something can be done for
+                            relieving my pain. Thank you for relieving my pain and suffering."</p>
+                        <p class="testimonial-author">- A patient with stage 4 cancer of pancreas</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"Can't imagine my mother having a good quality of life without this
+                            team's immense support"</p>
+                        <p class="testimonial-author">- Son of a patient in hospice</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"example example"</p>
+                        <p class="testimonial-author">- somebody</p>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-box">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"example example"</p>
+                        <p class="testimonial-author">- somebody</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="footernew"></div>
     <script>
         fetch('footernew.html')
@@ -736,6 +977,80 @@
         // Initialize the slideshow
         showSlide(0);
         startSlideShow();
+    </script>
+    <script>
+        // Testimonials Slider
+        const testimonialContainer = document.querySelector('.testimonials-container');
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        const dotsContainer = document.querySelector('.testimonial-dots');
+        let currentTestimonial = 0;
+        let testimonialInterval;
+
+        // Create dots
+        testimonialSlides.forEach((_, index) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                showTestimonial(index);
+                resetTestimonialInterval();
+            });
+            dotsContainer.appendChild(dot);
+        });
+
+        function showTestimonial(index) {
+            // Update transform to slide horizontally
+            testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
+
+            // Update dots
+            document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
+            document.querySelectorAll('.dot')[index].classList.add('active');
+
+            currentTestimonial = index;
+        }
+
+        function nextTestimonial() {
+            currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+            showTestimonial(currentTestimonial);
+        }
+
+        function resetTestimonialInterval() {
+            clearInterval(testimonialInterval);
+            testimonialInterval = setInterval(nextTestimonial, 5000);
+        }
+
+        // Add touch support for mobile devices
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        testimonialContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        testimonialContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentTestimonial < testimonialSlides.length - 1) {
+                    // Swipe left
+                    showTestimonial(currentTestimonial + 1);
+                } else if (diff < 0 && currentTestimonial > 0) {
+                    // Swipe right
+                    showTestimonial(currentTestimonial - 1);
+                }
+                resetTestimonialInterval();
+            }
+        }
+
+        // Initialize testimonial slider
+        showTestimonial(0);
+        resetTestimonialInterval();
     </script>
 </body>
 
