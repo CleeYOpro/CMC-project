@@ -38,20 +38,15 @@
             height: auto;
             min-height: 291px;
             background-color: #ffffff;
-            font-size: 22px;
+            font-size: clamp(36px, 5vw, 60px);
             font-family: 'Domine', serif;
             font-weight: bold;
             text-align: left;
-            line-height: 1.2;
+            line-height: 135%;
             position: relative;
             overflow: hidden;
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            box-sizing: border-box;
-            min-height: unset;
-            height: auto;
-            border-radius: 0;
+            margin-bottom: 20px;
+            display: flex;
         }
 
         .slide {
@@ -367,20 +362,21 @@
                 padding: 0;
                 width: 100%;
                 min-height: unset;
-                height: auto;
+                height: 75px;
             }
 
             .textbox {
                 font-size: 22px;
                 text-align: left;
-                margin: 0;
+                margin-bottom: -4px;
                 padding: 0;
                 width: 100%;
                 box-sizing: border-box;
                 min-height: unset;
-                height: 75;
+                height: 75px;
                 line-height: 1.2;
                 border-radius: 0;
+                display: block;
             }
 
             .controls {
@@ -388,7 +384,7 @@
             }
 
             .who-we-are-section {
-                margin-top: 0px;
+                margin-top: 20px;
             }
 
             .who-we-are-wrapper {

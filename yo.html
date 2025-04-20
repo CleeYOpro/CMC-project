@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shiny Text</title>
+    <style>
+        body {
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .shiny-text {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(120deg,
+                    #00f 0%,
+                    #0ff 40%,
+                    #fff 50%,
+                    #0ff 60%,
+                    #00f 100%);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: shine 2s linear infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                background-position: -100% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shiny-text">Shiny Text</div>
+</body>
+
+</html>
