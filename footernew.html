@@ -1,218 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
+     <style>
+         footer {
+             background-color: #002855;
+             color: #ffffff;
+             font-family: 'Montserrat', sans-serif;
+ 
+         }
+ 
+         .footer-container {
+             max-width: 1352px;
+             margin: 0 auto;
+             padding: 0 45px;
+             display: grid;
+             grid-template-columns: 1fr 1fr 40px 2fr;
+             gap: 80px;
+         }
+ 
+         /* Quick Links Section */
+         .quick-links h3 {
+             font-size: 24px;
+             margin-bottom: 20px;
+             font-weight: 600;
+         }
+ 
+         .quick-links a {
+             display: block;
+             color: #ffffff;
+             text-decoration: none;
+             font-size: 16px;
+             margin-bottom: 12px;
+             font-weight: 600;
+         }
+ 
+         .quick-links a:hover {
+             text-decoration: underline;
+         }
+ 
+         .social-icons {
+             margin-top: 20px;
+             margin-bottom: 16px;
+         }
+ 
+         .social-icons a {
+             display: inline-block;
+             margin-right: 16px;
+             font-size: 24px;
+             transition: color 0.3s ease;
+         }
+ 
+         .social-icons a:hover {
+             color: #6089B7;
+         }
+ 
+         /* Contact Us Section */
+         .contact-us h3 {
+             font-size: 24px;
+             margin-bottom: 20px;
+             font-weight: 600;
+         }
+ 
+         .contact-item {
+             display: flex;
+             align-items: flex-start;
+             margin-bottom: 16px;
+         }
+ 
+         .contact-item i {
+             font-size: 20px;
+             margin-right: 12px;
+             margin-top: 0px;
+         }
+ 
+         .contact-item a,
+         .contact-item h6 {
+             color: #ffffff;
+             text-decoration: none;
+             font-size: 16px;
+             font-weight: 600;
+             margin: 0;
+         }
+ 
+         .contact-item h5 {
+             color: #ffffff;
+             text-decoration: underline;
+             font-size: 16px;
+             font-weight: 600;
+             margin: 0;
+         }
+ 
+         .clinic-locations {
+             margin-top: 8px;
+             font-size: 10px;
+             font-weight: 300;
+             line-height: 1.4;
+         }
+ 
+         /* Line Section */
+         .line {
+             border-left: 0.5px solid rgb(255, 255, 255);
+             height: 250px;
+             margin-top: 30px;
+             justify-self: center;
+         }
+ 
+         /* Logo Section */
+         .department-logo {
+             text-align: right;
+         }
+ 
+         .department-logo img {
+             max-width: 559px;
+             width: 100%;
+             height: auto;
+             margin-top: 30px;
+             margin-bottom: 40px;
+             transition: transform 0.3s ease;
+         }
+ 
+         .department-logo img:hover {
+             transform: scale(1.02);
+         }
+ 
+         /* Copyright Section */
+         .footer-bottom {
+             margin-top: 40px;
+             text-align: left;
+             grid-column: 1 / -1;
+             font-size: 14px;
+             font-weight: 600;
+         }
+ 
+ 
+         .footer-bottom h2 {
+             margin: 4px 0;
+             margin-top: 40px;
+             text-align: left;
+             grid-column: 1 / -1;
+             font-size: 14px;
+             font-weight: 600;
+         }
+ 
+         .footer-bottom p {
+             margin-top: 10.85px;
+             text-align: left;
+             grid-column: 1 / -1;
+             font-size: 10px;
+             font-weight: 600;
+         }
+ 
+         .footer-bottom a {
+             color: #ffffff;
+             text-decoration: none;
+         }
+ 
+         .footer-bottom a:hover {
+             text-decoration: underline;
+         }
+ 
+         /* Responsive Design */
+         @media (max-width: 1024px) {
+             .footer-container {
+                 grid-template-columns: 1fr 1fr;
+                 gap: 40px;
+             }
+ 
+             .line {
+                 display: none;
+             }
+ 
+             .department-logo {
+                 grid-column: 1 / -1;
+                 text-align: center;
+             }
+         }
+ 
+         @media (max-width: 768px) {
+             .footer-container {
+                 grid-template-columns: 1fr;
+                 gap: 32px;
+             }
+ 
+             .quick-links,
+             .contact-us,
+             .department-logo {
+                 text-align: left;
+             }
+ 
+             .department-logo img {
+                 max-width: 100%;
+             }
+         }
+     </style>
+ </head>
+ 
+ <body>
+     <footer>
+         <div class="footer-container">
+             <div class="quick-links">
+                 <h3>Quick Links</h3>
+                 <a href="faculty.html">Faculty</a>
+                 <a href="services.html">Services</a>
+                 <a href="educational-videos.html">Educational Resources</a>
+                 <a href="donate.html">Donate</a>
+                 <div class="social-icons">
+                     <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+                     <a href="https://youtube.com/@departmentofpalliativemedi3282?si=RH1ywubZyEn3dFq6"><i
+                             class="fab fa-youtube fa-2x"></i></a>
+                 </div>
+             </div>
+ 
+             <div class="contact-us">
+                 <h3>Contact Us</h3>
+                 <div class="contact-item">
+                     <i class="fa-solid fa-envelope"></i>
+                     <a href="mailto:palcare@cmcvellore.ac.in">palcare@cmcvellore.ac.in</a>
+                 </div>
+                 <div class="contact-item">
+                     <i class="fa-solid fa-phone"></i>
+                     <h5>+91 0416-228-3159</h5>
+                 </div>
+                 <div class="contact-item">
+                     <i class="fa-solid fa-location-dot"></i>
+                     <div>
+                         <h5>Outpatient Clinic Locations</h5>
+                         <div class="clinic-locations">
+                             <p>CMC Vellore, Main Campus OPD Block 1st floor, Near PCF</p>
+                             <p>CMC Vellore, Ranipet Campus A Block, Basement A0002</p>
+                             <p>CMC Vellore, Chittoor Campus Room No:15, North OPD Palliative Medicine.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+ 
+             <div class="line"></div>
+ 
+             <div class="department-logo">
+                 <img src="Images/we in the spot.png" alt="Department of Palliative Medicine">
+                 <div class="footer-bottom">
+                     <h2>&copy; 2024 Department of Palliative Medicine - Christian Medical College, Vellore. All Rights
+                         Reserved.</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
-    <style>
-        footer {
-            background-color: #002855;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            padding: 40px 20px;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .quick-links,
-        .contact-us {
-            text-align: center;
-        }
-
-        .quick-links h3,
-        .contact-us h3 {
-            font-size: 20px;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .quick-links a {
-            display: block;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .quick-links a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons {
-            margin-top: 16px;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            font-size: 22px;
-            color: #ffffff;
-            transition: color 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            color: #6089B7;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            margin-bottom: 12px;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .contact-item i {
-            font-size: 18px;
-            margin-top: 2px;
-        }
-
-        .contact-item a,
-        .contact-item h5,
-        .contact-item h6 {
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .clinic-locations p {
-            font-size: 12px;
-            margin: 4px 0;
-            font-weight: 300;
-            line-height: 1.4;
-        }
-
-        .department-logo {
-            text-align: center;
-        }
-
-        .department-logo img {
-            max-width: 80%;
-            height: auto;
-            margin: 20px auto;
-            transition: transform 0.3s ease;
-        }
-
-        .department-logo img:hover {
-            transform: scale(1.02);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            font-size: 12px;
-            font-weight: 500;
-            margin-top: 24px;
-        }
-
-        .footer-bottom a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .footer-bottom a:hover {
-            text-decoration: underline;
-        }
-
-        /* Tablet and Up */
-        @media (min-width: 768px) {
-            .footer-container {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                text-align: left;
-            }
-
-            .quick-links,
-            .contact-us {
-                flex: 1 1 40%;
-            }
-
-            .department-logo {
-                flex: 1 1 100%;
-            }
-        }
-
-        /* Desktop */
-        @media (min-width: 1024px) {
-            .footer-container {
-                flex-wrap: nowrap;
-                gap: 60px;
-            }
-
-            .department-logo {
-                text-align: right;
-            }
-
-            .department-logo img {
-                max-width: 100%;
-            }
-
-            .footer-bottom {
-                text-align: left;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <footer>
-        <div class="footer-container">
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <a href="faculty.html">Faculty</a>
-                <a href="services.html">Services</a>
-                <a href="educational-videos.html">Educational Resources</a>
-                <a href="donate.html">Donate</a>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://youtube.com/@departmentofpalliativemedi3282?si=RH1ywubZyEn3dFq6"><i
-                            class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <div class="contact-us">
-                <h3>Contact Us</h3>
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:palcare@cmcvellore.ac.in">palcare@cmcvellore.ac.in</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <h5>+91 0416-228-3159</h5>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <h5>Outpatient Clinic Locations</h5>
-                        <div class="clinic-locations">
-                            <p>CMC Vellore, Main Campus OPD Block 1st floor, Near PCF</p>
-                            <p>CMC Vellore, Ranipet Campus A Block, Basement A0002</p>
-                            <p>CMC Vellore, Chittoor Campus Room No:15, North OPD Palliative Medicine.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="department-logo">
-                <img src="Images/we in the spot.png" alt="Department of Palliative Medicine">
-                <div class="footer-bottom">
-                    <h2>&copy; 2024 Department of Palliative Medicine - Christian Medical College, Vellore. All Rights
-                        Reserved.</h2>
-                    <p>Designed By Cleofus Balaranjith</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>
+                     <p>Designed By Cleofus Balaranjith</p>
+                 </div>
+             </div>
+         </div>
+     </footer>
+ </body>
+ 
