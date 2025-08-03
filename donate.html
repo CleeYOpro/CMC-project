@@ -9,6 +9,8 @@
     <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <title>Donate - Department of Palliative Medicine</title>
+    <!-- Content Security Policy to help prevent XSS and clickjacking -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://kit.fontawesome.com https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' https://kit.fontawesome.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'self'; form-action 'self' https://givecmc.org;">
     <style>
         body {
             margin: 0;
@@ -298,7 +300,7 @@
                         empower families to rebuild their lives with dignity and hope after losing a loved one.</p>
                 </div>
             </div>
-            <a href="https://givecmc.org/palliative-care/" class="main-donate-button">Donate to Palliative Care</a>
+            <a href="https://givecmc.org/palliative-care/" class="main-donate-button" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Donate to Palliative Care</a>
         </div>
 
         <div class="donation-cards">
@@ -316,7 +318,7 @@
                     <div>
                         <div class="price">₹20,000 For a bereaved family</div>
                         <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Financial%20rehabilitation%22,%22AccountCode%22:%2222P296%22}}"
-                            class="card-donate-button">Donate</a>
+                            class="card-donate-button" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Donate</a>
                     </div>
                 </div>
             </div>
@@ -336,7 +338,7 @@
                     <div>
                         <div class="price"><strong>₹3,000</strong> Support Medicines for One Month.</div>
                         <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Medicines%20For%20A%20Month%22,%22EnterTheAmountinINR%22:%223000%22,%22AccountCode%22:%2222P292%22}}"
-                            class="card-donate-button">Donate</a>
+                            class="card-donate-button" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Donate</a>
                     </div>
                 </div>
             </div>
@@ -355,7 +357,7 @@
                     <div>
                         <div class="price"><strong>₹700</strong> For one mattress.</div>
                         <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%221%20Cotton%20Mattress%22,%22EnterTheAmountinINR%22:%22700%22,%22AccountCode%22:%2222P293%22}}"
-                            class="card-donate-button">Donate</a>
+                            class="card-donate-button" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Donate</a>
                     </div>
                 </div>
             </div>
@@ -374,7 +376,7 @@
                     <div>
                         <div class="price"><strong>₹12,000</strong> For groceries for one year.</div>
                         <a href="https://givecmc.org/donate/?entry={%22Details2%22:{%22Purpose2%22:%22Groceries%20for%20a%20year%22,%22EnterTheAmountinINR%22:%2212000%22,%22AccountCode%22:%2222P296%22}}"
-                            class="card-donate-button">Donate</a>
+                            class="card-donate-button" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Donate</a>
                     </div>
                 </div>
             </div>
@@ -382,7 +384,7 @@
 
         <div class="more-info">
             <p>For more information about donations,<br>visit CMC's official giving website.</p>
-            <a href="https://givecmc.org/palliative-care/" class="more-info-button">More Info <i
+            <a href="https://givecmc.org/palliative-care/" class="more-info-button" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">More Info <i
                     class="fa-solid fa-chevron-right" style="margin-left: 10px;"></i></a>
         </div>
 
@@ -393,6 +395,17 @@
     </div>
 
     <div id="footernew"></div>
+    <script>
+    // Enforce security attributes on all external links at runtime
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="http"]');
+      links.forEach(link => {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+        link.setAttribute('referrerpolicy', 'no-referrer');
+      });
+    });
+    </script>
 </body>
 
 </html>
