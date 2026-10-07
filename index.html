@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Department of Palliative Medicine at Christian Medical College Vellore offers compassionate, whole-person care for patients with serious illness and their families.">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <title>Home Page - Department of Palliative Medicine</title>
     <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
@@ -690,56 +691,11 @@
             }
         }
     </style>
+    <script src="navbar.js"></script>
 </head>
 
 <body>
     <div id="navbar"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-
-                    const hamburger = document.querySelector('.hamburger');
-                    const mobileMenu = document.querySelector('.mobile-menu');
-                    const closeMenu = document.querySelector('.close-menu');
-                    const dropdownTrigger = document.querySelector('.mobile-dropdown-trigger');
-                    const dropdown = document.querySelector('.mobile-dropdown');
-
-                    hamburger.addEventListener('click', () => {
-                        mobileMenu.classList.add('active');
-                        document.body.style.overflow = 'hidden';
-                    });
-
-                    closeMenu.addEventListener('click', () => {
-                        mobileMenu.classList.remove('active');
-                        document.body.style.overflow = 'auto';
-                    });
-
-                    // Remove any existing click listener first
-                    dropdownTrigger.removeEventListener('click', toggleDropdown);
-
-                    // Define the toggle function
-                    function toggleDropdown() {
-                        console.log('Dropdown clicked'); // Debug log
-                        dropdown.classList.toggle('active');
-                        dropdownTrigger.classList.toggle('active');
-                    }
-
-                    // Add the click listener
-                    dropdownTrigger.addEventListener('click', toggleDropdown);
-
-                    // Close dropdown when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (!dropdownTrigger.contains(e.target) && !dropdown.contains(e.target)) {
-                            dropdown.classList.remove('active');
-                            dropdownTrigger.classList.remove('active');
-                        }
-                    });
-                });
-        });
-    </script>
     <div class="container1">
         <div class="text-container">
             <div class="textbox">
@@ -757,11 +713,8 @@
         <div class="image-box">
             <img src="Images/image 4.png" alt="Edema care" class="active">
             <img src="Images/wounddressin.png" alt="Wound dressing">
-            <img src="Images/2401-vellore-8-crop.jpg" alt="Wound dressing">
+            <img src="Images/2401-vellore-8-crop.jpg" alt="Palliative Home Care Team with a patient and his family">
         </div>
-    </div>
-    <div class="container2">
-
     </div>
 
     <div class="who-we-are-section">
@@ -782,7 +735,7 @@
         <h2 class="what-we-do-heading">What We Do</h2>
         <div class="service-cards-container">
             <div class="service-card">
-                <img src="Images\whwe1.png" alt="Outpatient and Inpatient Care">
+                <img src="Images/whwe1.png" alt="Outpatient and Inpatient Care">
                 <div class="service-card-content">
                     <h3>Outpatient and Inpatient Care:</h3>
                     <p>We provide personalized care to improve quality of life through regular outpatient follow-ups and
@@ -791,7 +744,7 @@
             </div>
 
             <div class="service-card">
-                <img src="Images\whawe2.png" alt="Home Care and Hospice Services">
+                <img src="Images/whawe2.png" alt="Home Care and Hospice Services">
                 <div class="service-card-content">
                     <h3>Hospice Services:</h3>
                     <p>Our team offers home visits and compassionate end-of-life care at our 15-bed hospice, ensuring
@@ -800,7 +753,7 @@
             </div>
 
             <div class="service-card">
-                <img src="Images\whawe3.png" alt="Counseling and Support">
+                <img src="Images/whawe3.png" alt="Counseling and Support">
                 <div class="service-card-content">
                     <h3>Counseling and Support:</h3>
                     <p>We offer emotional, social, and spiritual support for patients and families through counseling,
@@ -809,7 +762,7 @@
             </div>
 
             <div class="service-card">
-                <img src="Images\whawe4.png" alt="Consultation and Bereavement">
+                <img src="Images/whawe4.png" alt="Consultation and Bereavement">
                 <div class="service-card-content">
                     <h3>Consultation and Bereavement:</h3>
                     <p>Our team provides consultative care in various wards and ongoing bereavement support for families
@@ -827,18 +780,18 @@
                     <th>Day</th>
                     <th>Town Campus (PCF Extension 1st Floor)</th>
                     <th>Ranipet Campus (A0002, Basement, Rooms 27-32)</th>
-                    <th>Chittoor Campus</th>
+                    <th>Chittoor Campus (North OPD, Room 15)</th>
                 </tr>
                 <tr>
                     <td>Monday</td>
-                    <td>General OP (Full day)</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jyothsna Kuriakose</td>
                     <td>General OP (Full day)<br>Private OP: Dr. Jewell Joseph</td>
                     <td>-</td>
                 </tr>
                 <tr>
                     <td>Tuesday</td>
                     <td>General OP (Full day)<br>Private OP: Dr. Jenifer Jeba S.</td>
-                    <td>General OP (Full day)</td>
+                    <td>General OP (Full day)<br>Private OP: Dr. Jyothsna Kuriakose</td>
                     <td>General OP (Full day)</td>
                 </tr>
                 <tr>
@@ -891,8 +844,9 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left"></i>
                         </div>
-                        <p class="testimonial-text">"example example"</p>
-                        <p class="testimonial-author">- somebody</p>
+                        <p class="testimonial-text">"No one had told me all this while that something can be done for
+                            relieving my pain. Thank you for relieving my pain and suffering."</p>
+                        <p class="testimonial-author">- A patient with stage 4 cancer of pancreas</p>
                     </div>
                 </div>
                 <div class="testimonial-slide">
@@ -900,8 +854,9 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left"></i>
                         </div>
-                        <p class="testimonial-text">"example example"</p>
-                        <p class="testimonial-author">- somebody</p>
+                        <p class="testimonial-text">"Can't imagine my mother having a good quality of life without this
+                            team's immense support"</p>
+                        <p class="testimonial-author">- Son of a patient in hospice</p>
                     </div>
                 </div>
                 <div class="testimonial-slide">
@@ -929,8 +884,9 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left"></i>
                         </div>
-                        <p class="testimonial-text">"example example"</p>
-                        <p class="testimonial-author">- somebody</p>
+                        <p class="testimonial-text">"No one had told me all this while that something can be done for
+                            relieving my pain. Thank you for relieving my pain and suffering."</p>
+                        <p class="testimonial-author">- A patient with stage 4 cancer of pancreas</p>
                     </div>
                 </div>
                 <div class="testimonial-slide">
@@ -938,21 +894,15 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left"></i>
                         </div>
-                        <p class="testimonial-text">"example example"</p>
-                        <p class="testimonial-author">- somebody</p>
+                        <p class="testimonial-text">"Can't imagine my mother having a good quality of life without this
+                            team's immense support"</p>
+                        <p class="testimonial-author">- Son of a patient in hospice</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="footernew"></div>
-    <script>
-        fetch('footernew.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footernew').innerHTML = data;
-            });
-    </script>
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
@@ -1010,80 +960,6 @@
         // Initialize the slideshow
         showSlide(0);
         startSlideShow();
-    </script>
-    <script>
-        // Testimonials Slider
-        const testimonialContainer = document.querySelector('.testimonials-container');
-        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-        const dotsContainer = document.querySelector('.testimonial-dots');
-        let currentTestimonial = 0;
-        let testimonialInterval;
-
-        // Create dots
-        testimonialSlides.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                showTestimonial(index);
-                resetTestimonialInterval();
-            });
-            dotsContainer.appendChild(dot);
-        });
-
-        function showTestimonial(index) {
-            // Update transform to slide horizontally
-            testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
-
-            // Update dots
-            document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
-            document.querySelectorAll('.dot')[index].classList.add('active');
-
-            currentTestimonial = index;
-        }
-
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
-            showTestimonial(currentTestimonial);
-        }
-
-        function resetTestimonialInterval() {
-            clearInterval(testimonialInterval);
-            testimonialInterval = setInterval(nextTestimonial, 5000);
-        }
-
-        // Add touch support for mobile devices
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        testimonialContainer.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        testimonialContainer.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0 && currentTestimonial < testimonialSlides.length - 1) {
-                    // Swipe left
-                    showTestimonial(currentTestimonial + 1);
-                } else if (diff < 0 && currentTestimonial > 0) {
-                    // Swipe right
-                    showTestimonial(currentTestimonial - 1);
-                }
-                resetTestimonialInterval();
-            }
-        }
-
-        // Initialize testimonial slider
-        showTestimonial(0);
-        resetTestimonialInterval();
     </script>
 </body>
 

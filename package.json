@@ -1,0 +1,36 @@
+{
+  "name": "cmc-project",
+  "version": "1.0.0",
+  "description": "Welcome to the official website repository for the **Department of Palliative Medicine, Christian Medical College, Vellore**.",
+  "main": "navbar.js",
+  "scripts": {
+    "dev": "TINA_PUBLIC_IS_LOCAL=true tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CleeYOpro/CMC-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CleeYOpro/CMC-project/issues"
+  },
+  "homepage": "https://github.com/CleeYOpro/CMC-project#readme",
+  "dependencies": {
+    "@tinacms/cli": "^1.10.3",
+    "gray-matter": "^4.0.3",
+    "mime-types": "^2.1.35",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^9.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark": "^14.0.2",
+    "remark-html": "^16.0.1",
+    "tinacms": "^1.5.17"
+  },
+  "devDependencies": {}
+}
