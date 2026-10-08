@@ -1,0 +1,9 @@
+{
+  // Deploys the static HTML site as Cloudflare Workers static assets.
+  // The Next.js/Tina files in this repo are excluded via .assetsignore.
+  "name": "cmc-project",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "."
+  }
+}
