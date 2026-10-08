@@ -1,0 +1,21 @@
+# Keep the published site to the static HTML pages and their assets
+.git
+.github
+.vscode
+.gitignore
+.assetsignore
+wrangler.jsonc
+node_modules
+.next
+out
+components
+content
+lib
+pages
+public
+package.json
+package-lock.json
+next.config.js
+next-env.d.ts
+tsconfig.json
+README.md

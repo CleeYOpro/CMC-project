@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming palliative care events for 2026 and 2027, and past activities of the Department of Palliative Medicine, CMC Vellore.">
     <link rel="icon" type="image/png" href="Images/logo.png">
     <script src="https://kit.fontawesome.com/2ec8e7d68d.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Domine' rel='stylesheet'>
@@ -77,7 +78,144 @@
             border-radius: 8px;
         }
 
+        .section-heading {
+            font-family: 'Domine', serif;
+            font-size: 48px;
+            color: #002855;
+            text-align: center;
+            margin: 72px 0 12px;
+        }
+
+        .section-subheading {
+            font-size: 18px;
+            line-height: 1.5;
+            text-align: center;
+            color: #3a4a5c;
+            max-width: 900px;
+            margin: 0 auto 32px;
+        }
+
+        .group-heading {
+            font-family: 'Domine', serif;
+            font-size: 28px;
+            color: #002855;
+            margin: 48px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #c4dcf5;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+        }
+
+        .upcoming-event {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid #c4dcf5;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 40, 85, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .upcoming-event:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 40, 85, 0.14);
+        }
+
+        .upcoming-event img {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .upcoming-event img.contain {
+            object-fit: contain;
+            background: #ffffff;
+        }
+
+        .upcoming-event-body {
+            padding: 20px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .event-date {
+            align-self: flex-start;
+            background: #002855;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 999px;
+        }
+
+        .upcoming-event h4 {
+            font-family: 'Domine', serif;
+            font-size: 22px;
+            line-height: 1.3;
+            color: #002855;
+            margin: 4px 0 0;
+        }
+
+        .event-meta {
+            font-size: 15px;
+            font-weight: 600;
+            color: #6089B7;
+            margin: 0;
+        }
+
+        .event-meta i {
+            margin-right: 6px;
+        }
+
+        .event-summary {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #1b2a3a;
+            margin: 0;
+        }
+
+        .event-theme {
+            font-style: italic;
+        }
+
+        .photo-credits {
+            font-size: 12px;
+            line-height: 1.6;
+            color: #5a6878;
+            margin: 64px auto 0;
+            max-width: 1120px;
+        }
+
+        .photo-credits a {
+            color: inherit;
+        }
+
         @media (max-width: 768px) {
+            .section-heading {
+                font-size: 32px;
+                margin-top: 48px;
+            }
+
+            .section-subheading {
+                font-size: 16px;
+            }
+
+            .group-heading {
+                font-size: 22px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
             .activities-container {
                 margin: 40px auto;
                 padding: 0 20px;
@@ -112,6 +250,130 @@
             healthcare professionals and community outreach initiatives to raise awareness about palliative care.
         </p>
 
+        <h2 class="section-heading">Upcoming Events</h2>
+        <p class="section-subheading">
+            Conferences, trainings and webinars in palliative care for healthcare professionals, volunteers and
+            everyone who cares for people with serious illness. Contact each organizer for registration details.
+        </p>
+
+        <h3 class="group-heading">World Hospice &amp; Palliative Care Day 2026</h3>
+        <div class="events-grid">
+            <div class="upcoming-event">
+                <img src="Images/hospiceday_world.png" class="contain"
+                    alt="World Hospice &amp; Palliative Care Day ribbon" loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">October 9–11, 2026</span>
+                    <h4>International WHPCD Conference 2026</h4>
+                    <p class="event-meta"><i class="fa-solid fa-location-dot"></i>IAPC &amp; Alpha Palliative Care,
+                        Thrissur, Kerala</p>
+                    <p class="event-summary">Focuses on pain management and community hospice access.</p>
+                </div>
+            </div>
+
+            <div class="upcoming-event">
+                <img src="Images/events/cgf-webinar.jpg" alt="A caregiver holding the hand of an elderly patient"
+                    loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">October 9, 2026</span>
+                    <h4>CGF WHPCD Global Webinar</h4>
+                    <p class="event-meta"><i class="fa-solid fa-video"></i>Online</p>
+                    <p class="event-summary">Clinical discussions on honoring cultural values in palliative care.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="group-heading">Late 2026</h3>
+        <div class="events-grid">
+            <div class="upcoming-event">
+                <img src="Images/events/nursing-training.jpg" alt="Nursing students at a lamp lighting ceremony"
+                    loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">November 21–22, 2026</span>
+                    <h4>"Sharpen Your Skills – 2026"</h4>
+                    <p class="event-meta"><i class="fa-solid fa-user-nurse"></i>IAPC Nursing Faculty Training</p>
+                    <p class="event-summary">Specialized training modules for palliative care nurses.</p>
+                </div>
+            </div>
+
+            <div class="upcoming-event">
+                <img src="Images/events/anaesthesia.jpg" alt="Operating theatre with an anaesthesia workstation"
+                    loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">November 28, 2026</span>
+                    <h4>IAPC – ISA Joint Session</h4>
+                    <p class="event-meta"><i class="fa-solid fa-users"></i>Indian Society of Anaesthetists</p>
+                    <p class="event-summary event-theme">"Beyond Rescue: Integrating Palliative Care in Anaesthesia,
+                        Pain and Critical Care."</p>
+                </div>
+            </div>
+
+            <div class="upcoming-event">
+                <img src="Images/events/cnci-kolkata.jpg" alt="Chittaranjan National Cancer Institute, Kolkata"
+                    loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">December 4, 2026</span>
+                    <h4>Palliative Care in Non-Cancer Conditions</h4>
+                    <p class="event-meta"><i class="fa-solid fa-hospital"></i>SGCCRI / CNCI</p>
+                    <p class="event-summary">Managing pain in COPD, chronic kidney disease (CKD), and heart failure.</p>
+                </div>
+            </div>
+
+            <div class="upcoming-event">
+                <img src="Images/events/silchar.jpg" alt="The Barak River in Silchar, Assam" loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">December 5–6, 2026</span>
+                    <h4>Fundamentals of Palliative Care</h4>
+                    <p class="event-meta"><i class="fa-solid fa-location-dot"></i>Cachar Cancer Hospital &amp; Research
+                        Centre, Silchar</p>
+                    <p class="event-summary">Community volunteer training and non-oncology palliative care.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="group-heading">2027 National &amp; International Conferences</h3>
+        <div class="events-grid">
+            <div class="upcoming-event">
+                <img src="Images/events/spiritual-care.jpg" alt="Prayer candles lit beneath a cross" loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">January 23–24, 2027</span>
+                    <h4>Global Conference on Psychosocial &amp; Spiritual Interventions</h4>
+                    <p class="event-meta"><i class="fa-solid fa-calendar-day"></i>Pre-conference workshops Jan 23 ·
+                        Conference Jan 24</p>
+                    <p class="event-summary event-theme">"Reimagining Psychosocial and Spiritual Interventions in
+                        Holistic Clinical Care."</p>
+                </div>
+            </div>
+
+            <div class="upcoming-event">
+                <img src="Images/IAPC.png" class="contain" alt="Indian Association of Palliative Care logo"
+                    loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">February 18–21, 2027</span>
+                    <h4>IAPCON 2027 – 34th Annual International Conference of the IAPC</h4>
+                    <p class="event-meta"><i class="fa-solid fa-location-dot"></i>SOA University Convention Complex,
+                        Bhubaneswar, Odisha</p>
+                    <p class="event-summary">Workshops Feb 18 · Main conference Feb 19–21.<br><span
+                            class="event-theme">"Humanising High-Tech Medicine where Algorithm Meets Empathy."</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="upcoming-event">
+                <img src="Images/events/aphc-asia-pacific.png" class="contain"
+                    alt="Globe highlighting the Asia-Pacific region" loading="lazy">
+                <div class="upcoming-event-body">
+                    <span class="event-date">April 2027</span>
+                    <h4>17th Asia Pacific Hospice Palliative Care Conference (APHC 2027)</h4>
+                    <p class="event-meta"><i class="fa-solid fa-earth-asia"></i>Asia-Pacific regional conference</p>
+                    <p class="event-summary">Clinical updates, home care expansion, and Asia-Pacific palliative care
+                        policies.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-heading">Past Events</h2>
+        <p class="section-subheading">Highlights from activities organized by our department.</p>
+
         <div class="event-card">
             <h2 class="event-title">World Hospice and Palliative Care Day 2024</h2>
             <div class="video-container">
@@ -122,6 +384,17 @@
                 </iframe>
             </div>
         </div>
+
+        <p class="photo-credits">
+            Event photos from Wikimedia Commons:
+            <a href="https://commons.wikimedia.org/wiki/File:Hospice-1794418_1920.jpg" target="_blank" rel="noopener noreferrer">Hospice</a> by truthseeker08 (CC0);
+            <a href="https://commons.wikimedia.org/wiki/File:The_newly_inducted_nursing_cadets_at_the_lamp_lighting_ceremony_of_the_4th_Batch_of_BSc_(H)_Nursing_Students,_College_of_Nursing,_in_New_Delhi_on_October_27,_2017.jpg" target="_blank" rel="noopener noreferrer">Lamp lighting ceremony</a> by Ministry of Defence, Government of India (GODL-India);
+            <a href="https://commons.wikimedia.org/wiki/File:Laparoscopic_operating_theatre.jpg" target="_blank" rel="noopener noreferrer">Operating theatre</a> by Dr. Jayesh Amin (CC BY-SA 3.0);
+            <a href="https://commons.wikimedia.org/wiki/File:Chittaranjan_National_Cancer_Institute.jpg" target="_blank" rel="noopener noreferrer">Chittaranjan National Cancer Institute</a> by Anupamdutta73 (CC BY-SA 3.0);
+            <a href="https://commons.wikimedia.org/wiki/File:Barak_River_in_Silchar.jpg" target="_blank" rel="noopener noreferrer">Barak River in Silchar</a> by Konwar.anupam (CC BY-SA 3.0);
+            <a href="https://commons.wikimedia.org/wiki/File:Prayer_Candles_and_Cross.jpg" target="_blank" rel="noopener noreferrer">Prayer candles and cross</a> by Lucy Toner (CC0);
+            <a href="https://commons.wikimedia.org/wiki/File:Asia_and_the_Pacific_UNESCO_Region_(orthographic_projection).png" target="_blank" rel="noopener noreferrer">Asia and the Pacific</a> by Alvoradaking (CC BY-SA 4.0).
+        </p>
     </div>
 
     <div id="footernew"></div>

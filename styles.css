@@ -1,4 +1,17 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  color: #000f21;
+}
 
-  /*-----------------------------------------------*/
+a {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 
   

@@ -1,558 +1,493 @@
-<!DOCTYPE html>
-<html lang="en">
+<style>
+  /* Navbar is injected into every page by navbar.js. Everything is scoped to
+     .navbar-container / .mobile-menu so it can't fight with page styles. */
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="Images/logo.png">
-  <title>Navbar</title>
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  /* Pages (e.g. index.html) rely on this page-wide reset from the navbar */
+  body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar-container,
+  .mobile-menu {
+    --nav-bg: #002855;
+    --nav-fg: #ffffff;
+    --nav-focus: #ffd166;
+    --nav-height: 72px;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+  }
+
+  .navbar-container *,
+  .mobile-menu * {
+    box-sizing: border-box;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: 8px;
+    top: -100px;
+    z-index: 2000;
+    padding: 12px 16px;
+    background: #ffffff;
+    color: #002855;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 8px;
+  }
+
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    background-color: var(--nav-bg);
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1352px;
+    width: 100%;
+    height: var(--nav-height);
+    padding: 0 16px;
+  }
+
+  .navbar-logo {
+    display: block;
+    flex: 0 1 auto;
+    min-width: 0;
+    border-radius: 4px;
+  }
+
+  .navbar-logo img {
+    display: block;
+    height: 48px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  /* Focus ring that is visible on the dark navy background */
+  .navbar-container a:focus-visible,
+  .navbar-container button:focus-visible,
+  .mobile-menu a:focus-visible,
+  .mobile-menu button:focus-visible {
+    outline: 3px solid var(--nav-focus);
+    outline-offset: 3px;
+  }
+
+  /* ---------- Desktop links (hidden on small screens) ---------- */
+  .navbar-links {
+    display: none;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-item > a,
+  .dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 2px;
+    color: var(--nav-fg);
+    background: none;
+    border: 0;
+    font: inherit;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .nav-item > a:hover,
+  .dropdown-toggle:hover,
+  .nav-item > a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+  }
+
+  .dropdown-icon {
+    margin-left: 6px;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+  }
+
+  .dropdown-toggle[aria-expanded="true"] .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    margin: 0;
+    padding: 8px 0;
+    min-width: 220px;
+    list-style: none;
+    background-color: var(--nav-bg);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    z-index: 1001;
+  }
+
+  .dropdown-menu.open {
+    display: block;
+  }
+
+  /* Mouse users can just hover; touch and keyboard users use the button */
+  @media (hover: hover) and (pointer: fine) {
+    .nav-item.dropdown:hover .dropdown-menu {
+      display: block;
     }
+  }
 
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: var(--nav-fg);
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+  }
+
+  .dropdown-menu a:hover,
+  .dropdown-menu a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: underline;
+  }
+
+  /* ---------- Hamburger ---------- */
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .hamburger-icon,
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--nav-fg);
+  }
+
+  .hamburger-icon {
+    position: relative;
+  }
+
+  .hamburger-icon::before,
+  .hamburger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .hamburger-icon::before {
+    top: -8px;
+  }
+
+  .hamburger-icon::after {
+    top: 8px;
+  }
+
+  /* ---------- Desktop breakpoint ----------
+     The full link row + logo needs ~1100px; below that it used to overflow
+     and cause sideways scrolling, so the hamburger is used instead. */
+  @media (min-width: 1100px) {
     .navbar-container {
-      display: flex;
-      justify-content: center;
-      background-color: #002855;
-      width: 100%;
-      position: relative;
-      z-index: 1000;
+      --nav-height: 100px;
     }
 
     .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1352px;
-      width: 100%;
-      height: 100px;
       padding: 0 32px;
-      box-sizing: border-box;
-    }
-
-    .navbar-logo {
-      background: none;
     }
 
     .navbar-logo img {
-      max-height: 70px;
-      width: auto;
-      display: block;
-      transition: height 0.3s ease;
+      height: 56px;
     }
 
     .navbar-links {
       display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 32px;
     }
 
-    .nav-item {
-      position: relative;
-    }
-
-    .nav-item a {
-      text-decoration: none;
-      color: white;
-      font-weight: 600;
-      font-size: 16px;
-      padding: 4px 0;
-      white-space: nowrap;
-    }
-
-    .nav-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* Dropdown styles */
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #002855;
-      min-width: 200px;
-      padding: 8px 0;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      z-index: 1000;
-      list-style: none;
-    }
-
-    .dropdown-menu li {
-      padding: 8px 16px;
-      list-style: none;
-    }
-
-    .nav-item.dropdown:hover .dropdown-menu {
-      display: block;
-    }
-
-    .dropdown-icon {
-      margin-left: 4px;
-    }
-
-    /* Hamburger styles */
     .hamburger {
       display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 10px;
-      z-index: 1002;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .navbar-logo img {
+      height: 70px;
     }
 
-    .hamburger-icon {
-      display: block;
-      width: 30px;
-      height: 3px;
-      background-color: white;
-      position: relative;
-      transition: all 0.3s;
-      margin-right: 7px;
+    .navbar-links {
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .navbar {
+      padding: 0 8px;
     }
 
-    .hamburger-icon::before,
-    .hamburger-icon::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      transition: all 0.3s;
-
+    .navbar-logo img {
+      height: 40px;
     }
+  }
 
-    .hamburger-icon::before {
-      transform: translateY(-10px);
-    }
+  /* ---------- Mobile menu (full-screen overlay) ---------- */
+  .mobile-menu {
+    position: fixed;
+    /* inset:0 instead of height:100vh — on phones 100vh is taller than the
+       visible area (browser toolbars), which hid the bottom of the menu */
+    inset: 0;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--nav-bg);
+    color: var(--nav-fg);
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.35s;
+  }
 
-    .hamburger-icon::after {
-      transform: translateY(10px);
-    }
+  .mobile-menu.active {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s;
+  }
 
-    .hamburger.active .hamburger-icon {
-      background: transparent;
-    }
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex: 0 0 auto;
+    height: var(--nav-height);
+    padding: 0 16px;
+  }
 
-    .hamburger.active .hamburger-icon::before {
-      transform: rotate(45deg);
-    }
+  .mobile-logo {
+    display: block;
+    height: 48px;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    object-fit: contain;
+  }
 
-    .hamburger.active .hamburger-icon::after {
-      transform: rotate(-45deg);
-    }
+  .close-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    color: var(--nav-fg);
+    background: none;
+    border: 0;
+    border-radius: 6px;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+  }
 
-    /* Hide mobile-only items by default */
-    .nav-item.mobile-only {
-      display: none;
-    }
+  .mobile-menu-content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 20px calc(24px + env(safe-area-inset-bottom, 0px));
+  }
 
-    /* Desktop minimum width */
-    @media (min-width: 950px) {
-      .navbar-links {
-        display: flex !important;
-        /* Force display for desktop */
-      }
-    }
+  .mobile-menu-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-    @media (max-width: 1280px) {}
+  .mobile-menu-content li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
 
-    /* Mobile styles */
-    @media (max-width: 950px) {
-      .navbar {
-        padding: 0 16px;
-      }
+  .mobile-menu .nav-link,
+  .mobile-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 0;
+    color: var(--nav-fg);
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-      .navbar-logo {
-        position: relative;
-        z-index: 1002;
-        /* Above the menu overlay */
-      }
+  .mobile-menu .nav-link[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
 
-      .navbar-logo img {
-        height: 56px;
-      }
+  .mobile-dropdown-trigger::after {
+    content: '+';
+    content: '+' / '';
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+  }
 
-      .hamburger {
-        display: block;
-        z-index: 1002;
-        /* Same as logo */
-      }
+  .mobile-dropdown-trigger[aria-expanded="true"]::after {
+    content: '\2212';
+    content: '\2212' / '';
+  }
 
-      .navbar-links {
-        display: none;
-        /* Hide the old menu completely */
-      }
+  .mobile-dropdown {
+    padding-left: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 
-      /* Show mobile-only items */
-      .nav-item.mobile-only {
-        display: block;
-      }
+  .mobile-dropdown[hidden] {
+    display: none;
+  }
 
-      /* Hamburger animation */
-      .hamburger.active .hamburger-icon {
-        background: transparent;
-      }
+  .mobile-dropdown li:last-child {
+    border-bottom: 0;
+  }
 
-      .hamburger.active .hamburger-icon::before {
-        transform: rotate(45deg) translate(0, 0);
-      }
+  .mobile-dropdown .nav-link {
+    font-size: 16px;
+    font-weight: 500;
+    min-height: 48px;
+  }
 
-      .hamburger.active .hamburger-icon::after {
-        transform: rotate(-45deg) translate(0, 0);
-      }
-    }
-
-    /* Medium small screens */
-    @media (max-width: 480px) {
-      .navbar {
-        padding: 0 12px;
-      }
-
-      .navbar-logo img {
-        height: 48px;
-      }
-
-      .hamburger {
-        padding: 8px;
-      }
-
-      .hamburger-icon {
-        width: 24px;
-      }
-    }
-
-    /* Very small screens */
-    @media (max-width: 360px) {
-      .navbar {
-        padding: 0 8px;
-        height: 80px;
-      }
-
-      .navbar-logo img {
-        height: 40px;
-      }
-
-      .hamburger {
-        padding: 6px;
-      }
-
-      .hamburger-icon {
-        width: 20px;
-        height: 2px;
-      }
-
-      .hamburger-icon::before {
-        transform: translateY(-8px);
-      }
-
-      .hamburger-icon::after {
-        transform: translateY(8px);
-      }
-
-      .navbar-links {
-        padding: 70px 16px 16px;
-      }
-
-      .nav-item a {
-        font-size: 16px;
-        padding: 6px 0;
-      }
-    }
-
-    /* Ensure menu is scrollable on very small heights */
-    @media (max-height: 600px) {
-      .navbar-links {
-        overflow-y: auto;
-        padding-bottom: 60px;
-      }
-    }
-
-    /* Update mobile menu animation */
+  /* Never show the overlay on desktop, even if it was left open */
+  @media (min-width: 1100px) {
     .mobile-menu {
-      position: fixed;
-      top: -100%;
-      /* Start from above the viewport */
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-color: #002855;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      flex-direction: column;
-      z-index: 1001;
-    }
-
-    .mobile-menu.active {
-      top: 0;
-      /* Slide to top of viewport */
-    }
-
-    /* Add animations for menu items */
-    .mobile-menu-content ul li {
-      opacity: 0;
-      transform: translateY(-20px);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger animations for each menu item */
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(1) {
-      transition-delay: 0.2s;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(2) {
-      transition-delay: 0.3s;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(3) {
-      transition-delay: 0.4s;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(4) {
-      transition-delay: 0.5s;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(5) {
-      transition-delay: 0.6s;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(6) {
-      transition-delay: 0.7s;
-    }
-
-    .mobile-menu.active .mobile-menu-content ul li:nth-child(7) {
-      transition-delay: 0.8s;
-    }
-
-    /* Animate dropdown items */
-    .mobile-dropdown {
-      display: block;
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s ease-in-out;
-      height: 0;
-      overflow: hidden;
-    }
-
-    .mobile-dropdown.active {
-      opacity: 1;
-      transform: translateY(0);
-      height: auto;
-    }
-
-    .mobile-dropdown ul li {
-      opacity: 0;
-      transform: translateY(-10px);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .mobile-dropdown.active ul li {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Stagger dropdown items */
-    .mobile-dropdown.active ul li:nth-child(1) {
-      transition-delay: 0.1s;
-    }
-
-    .mobile-dropdown.active ul li:nth-child(2) {
-      transition-delay: 0.2s;
-    }
-
-    .mobile-dropdown.active ul li:nth-child(3) {
-      transition-delay: 0.3s;
-    }
-
-    .mobile-dropdown.active ul li:nth-child(4) {
-      transition-delay: 0.4s;
-    }
-
-    .mobile-dropdown.active ul li:nth-child(5) {
-      transition-delay: 0.5s;
-    }
-
-    .mobile-dropdown.active ul li:nth-child(6) {
-      transition-delay: 0.6s;
-    }
-
-    .mobile-menu-header {
-      position: sticky;
-      top: 0;
-      background-color: #002855;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1001;
-    }
-
-    .mobile-logo {
-      height: 48px;
-      width: auto;
-    }
-
-    .close-menu {
-      color: white;
-      font-size: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mobile-menu-content {
-      overflow-y: auto;
-      padding: 20px;
-      flex-grow: 1;
-    }
-
-    .mobile-menu-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .mobile-menu-content li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .mobile-menu .nav-link {
-      color: white;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 15px 0;
-      display: block;
-    }
-
-    .mobile-dropdown {
       display: none;
-      padding-left: 20px;
-      transition: all 0.3s ease;
-      background-color: rgba(255, 255, 255, 0.05);
     }
+  }
 
-    .mobile-dropdown.active {
-      display: block;
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu,
+    .mobile-menu.active,
+    .dropdown-icon {
+      transition: none;
     }
+  }
 
-    .mobile-dropdown ul {
-      margin: 0;
-      padding: 0;
-    }
+  /* Scroll lock while the menu is open (html + body for iOS Safari) */
+  html.nav-open,
+  html.nav-open body {
+    overflow: hidden;
+  }
+</style>
 
-    .mobile-dropdown-trigger {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
-    .mobile-dropdown-trigger::after {
-      content: '+';
-      font-size: 24px;
-      transition: transform 0.3s ease;
-    }
+<header class="navbar-container">
+  <nav class="navbar" aria-label="Main">
+    <a class="navbar-logo" href="index.html">
+      <img src="Images/we in the spot.png" width="1000" height="193"
+        alt="Department of Palliative Medicine, CMC Vellore – Home" />
+    </a>
 
-    .mobile-dropdown-trigger.active::after {
-      content: '-';
-      transform: rotate(45deg);
-    }
+    <ul class="navbar-links">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a href="aboutus.html">About</a></li>
+      <li class="nav-item"><a href="faculty.html">Faculty</a></li>
+      <li class="nav-item"><a href="services.html">Services</a></li>
+      <li class="nav-item"><a href="Training.html">Training</a></li>
+      <li class="nav-item dropdown">
+        <button type="button" class="dropdown-toggle" aria-expanded="false" aria-controls="resources-menu">
+          Resources <span class="dropdown-icon" aria-hidden="true">▼</span>
+        </button>
+        <ul class="dropdown-menu" id="resources-menu">
+          <li><a href="patient-stories.html">Patient Stories</a></li>
+          <li><a href="educational-videos.html">Educational Videos</a></li>
+          <li><a href="activities.html">Activities</a></li>
+          <li><a href="news.html">In The News</a></li>
+          <li><a href="documents.html">Documents</a></li>
+          <li><a href="links.html">External Links</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="contact.html">Contact</a></li>
+      <li class="nav-item"><a href="donate.html">Donate</a></li>
+    </ul>
 
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
+    <button type="button" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="hamburger-icon" aria-hidden="true"></span>
+    </button>
+  </nav>
+</header>
 
-      .hamburger {
-        display: block;
-      }
-    }
-
-    .mobile-menu.active~.navbar-container {
-      visibility: hidden;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="navbar-container">
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="Images/we in the spot.png" alt="Department of Palliative Medicine Logo" />
-      </div>
-      <button class="hamburger">
-        <span class="hamburger-icon"></span>
-      </button>
-      <ul class="navbar-links">
-        <li class="nav-item"><a href="index.html">Home</a></li>
-        <li class="nav-item"><a href="aboutus.html">About</a></li>
-        <li class="nav-item"><a href="faculty.html">Faculty</a></li>
-        <li class="nav-item"><a href="services.html">Services</a></li>
-        <li class="nav-item"><a href="Training.html">Training</a></li>
-
-        <li class="nav-item dropdown">
-          <a href="#" class="dropdown-toggle">Resources <span class="dropdown-icon">▼</span></a>
-          <ul class="dropdown-menu">
-            <li><a href="patient-stories.html">Patient Stories</a></li>
-            <li><a href="educational-videos.html">Educational Videos</a></li>
-            <li><a href="activities.html">Activities</a></li>
-            <li><a href="news.html">In The News</a></li>
-            <li><a href="documents.html">Documents</a></li>
-            <li><a href="links.html">External Links</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a href="contact.html">Contact</a></li>
-        <li class="nav-item"><a href="donate.html">Donate</a></li>
-      </ul>
-    </nav>
+<div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="mobile-menu-header">
+    <a href="index.html" class="mobile-logo-link">
+      <img src="Images/we in the spot.png" width="1000" height="193" class="mobile-logo"
+        alt="Department of Palliative Medicine, CMC Vellore – Home" />
+    </a>
+    <button type="button" class="close-menu" aria-label="Close menu">
+      <span aria-hidden="true">✕</span>
+    </button>
   </div>
-
-  <div class="mobile-menu">
-    <div class="mobile-menu-header">
-      <img src="Images/we in the spot.png" alt="Logo" class="mobile-logo">
-      <button class="close-menu">✕</button>
-    </div>
-    <div class="mobile-menu-content">
-      <ul>
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="aboutus.html" class="nav-link">About</a></li>
-        <li><a href="faculty.html" class="nav-link">Faculty</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="Training.html" class="nav-link">Training</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li class="mobile-dropdown-trigger nav-link">Resources</li>
-        <div class="mobile-dropdown">
-          <ul>
-            <li><a href="patient-stories.html" class="nav-link">Patient Stories</a></li>
-            <li><a href="educational-videos.html" class="nav-link">Educational Videos</a></li>
-            <li><a href="activities.html" class="nav-link">Activities</a></li>
-            <li><a href="news.html" class="nav-link">In The News</a></li>
-            <li><a href="documents.html" class="nav-link">Documents</a></li>
-            <li><a href="links.html" class="nav-link">External Links</a></li>
-          </ul>
-        </div>
-      </ul>
-    </div>
-  </div>
-</body>
-
-</html>
+  <nav class="mobile-menu-content" aria-label="Mobile">
+    <ul>
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="aboutus.html" class="nav-link">About</a></li>
+      <li><a href="faculty.html" class="nav-link">Faculty</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="Training.html" class="nav-link">Training</a></li>
+      <li>
+        <button type="button" class="mobile-dropdown-trigger" aria-expanded="false" aria-controls="mobile-resources">
+          Resources
+        </button>
+        <ul class="mobile-dropdown" id="mobile-resources" hidden>
+          <li><a href="patient-stories.html" class="nav-link">Patient Stories</a></li>
+          <li><a href="educational-videos.html" class="nav-link">Educational Videos</a></li>
+          <li><a href="activities.html" class="nav-link">Activities</a></li>
+          <li><a href="news.html" class="nav-link">In The News</a></li>
+          <li><a href="documents.html" class="nav-link">Documents</a></li>
+          <li><a href="links.html" class="nav-link">External Links</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+      <li><a href="donate.html" class="nav-link">Donate</a></li>
+    </ul>
+  </nav>
+</div>
